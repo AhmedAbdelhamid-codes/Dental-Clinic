@@ -1,0 +1,109 @@
+.hero{
+    background:linear-gradient(90deg,#3368a0a2,#66a3bf96),url("/photos/photo-1629909613654-28e377c37b09.avif") 
+    center / cover no-repeat;
+}
+
+.social::before{
+content: "";
+position: absolute;
+right: 110%;
+width: 3px;
+height: 100%;
+background-color: var(--third-color);
+}
+
+.details .title{
+  font-size:  clamp(40px,4vw,80px);
+  font-weight: bold;
+  color: white;
+  animation: fadeup 0.8s 0.2s ease both;
+}
+
+.details .subtitle{
+    color: var(--third-color);
+}
+
+.details .paragraph{
+    font-size: 22px;
+    font-weight: 900;
+    line-height: 24px;
+    color: white;;
+    animation: fadeup 0.8s 0.3s ease both;
+}
+
+.details .mainBtn{
+    color: var(--primary-text-color);
+    background-color: var(--primary-color);
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 25px;
+    padding: 10px 15px;
+    transition: var(--trans);
+    animation: fadeup 0.8s 0.4s ease both;
+}
+.details .mainBtn:hover{
+    background-color: var(--second-color);
+    transform: translateY(-3px);
+}
+
+.details .ghostBtn{
+    color: var(--primary-text-color);
+    background-color: transparent;
+    border: 1px solid white;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 25px;
+    padding: 10px 15px;
+    transition: var(--trans);
+    animation: fadeup 0.8s 0.5s ease both;
+}
+.details .ghostBtn:hover{
+    background-color: var(--second-color);
+    transform: translateY(-3px);
+}
+
+.social .titleSocial{
+    font-size: 40px;
+    font-weight: 600;
+    color: white;
+    animation: fadeup 0.8s 0.2s ease both;
+}
+
+.social .socialLinks{
+ border: 2px solid white;
+ width: 45px;
+ height: 45px;
+ font-size: 30px;
+ border-radius: 50%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ color: white;
+ transition: var(--trans);
+}
+.social .socialLinks:hover{
+ color: var(--second-color);
+  border: 2px solid var(--second-color);
+ transform: translateX(-2px);
+}
+
+.social1{animation: fadeup 0.8s 0.3s ease both;}
+.social2{animation: fadeup 0.8s 0.4s ease both;}
+.social3{animation: fadeup 0.8s 0.5s ease both;}
+.social4{animation: fadeup 0.8s 0.6s ease both;}
+
+/* anmations */
+@keyframes fadeup {
+    from{
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+ 
+
+
+

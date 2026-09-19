@@ -1,0 +1,52 @@
+<section class="booking">
+  <div class="container">
+    <div class="details mt-3 mb-5">
+        <h2 class="mainfont title"> اختر موعدك<span class="subtitle ms-sm-5 ms-0 d-block text-start">المناسب لك</span></h2>
+        <p class="paragraph">اختر الوقت <span class="special">المناسب</span> من المواعيد المتاحة وأكمل بيانات <br> الحجز في خطوات بسيطة</p>
+    </div>
+    <div class="bookDate">
+    @for (group of groupedSlots().entries(); track $index) {
+         <h3>{{group[0] | date:"EEEE, d MMMM y "}}</h3>
+        <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1">
+            @for (slot of group[1]; track $index) {
+              <div class="col">
+                <div class="date d-flex justify-content-between align-items-center">
+                  <div class="rghit">
+                    <span class="d-block">متاح</span>
+                    <h4>{{slot.time}}</h4>
+                  </div>
+                  <div class="left">
+                    <button type="button" class="bookBtn">احجز دلوقتي</button>
+                  </div>
+                </div> 
+              </div>
+            }
+        </div>
+    }
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- @for (slot of soltsData; track $index) {
+   <div>
+      {{ slot.date}}  {{slot.time}}
+  </div>
+} -->

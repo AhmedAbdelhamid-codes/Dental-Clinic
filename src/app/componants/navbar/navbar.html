@@ -1,0 +1,27 @@
+<header>
+    <nav [class.scroll]="scrolled" class="mynav navbar navbar-expand-lg fixed-top">
+     <div class="container">
+    <a class="navbar-brand me-0" routerLink="home"><span class="spacial d-block text-start">عيادة</span>د.مصطفى محمد سيد</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+      <ul class="navbar-nav m-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="navActive" routerLink="/home">الرئيسية</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="navActive" routerLink="/about">عن الدكتور</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="navActive" routerLink="/services">الخدمات</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="navActive" routerLink="/booking">الحجز</a>
+        </li>
+      </ul>
+      <a class="btn-book link-underline link-underline-opacity-0" routerLink="booking">احجز معادك دلوقتي</a>
+    </div>
+  </div>
+</nav>
+</header>
