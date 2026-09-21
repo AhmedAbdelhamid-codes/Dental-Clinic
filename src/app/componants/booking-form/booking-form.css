@@ -1,0 +1,131 @@
+.formAppointmentOverlay{
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background-color: rgba(71, 71, 71, 0.501);
+    backdrop-filter: blur(5px);
+    padding-top: 20px;
+}
+
+.formAppointment{
+    height: 80vh;
+    width: 35vw;
+    border-radius: 30px;
+}
+
+.topform{
+    border-radius: 20px 20px 0px 0px;
+    background-color: var(--primary-color);
+    
+}
+
+.subtitle{
+    color: var(--muted-text-color);
+}
+
+.closebtn{
+    font-size: 18px;
+    color: var(--muted-text-color);
+    background-color: transparent;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    top: 15px;
+    left: 15px;   
+    outline: none; 
+    border: 0px solid black;
+    transition: var(--trans);
+}
+.closebtn:hover{
+    color: var(--primary-text-color);
+    background-color: rgba(255, 255, 255, 0.527);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    background-color: var(--third-color);
+    border-radius: 0px 0px 20px 20px;
+    height: 100%;
+}
+
+form::-webkit-scrollbar {
+  width: 8px;
+}
+
+form::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+form::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 10px;
+}
+
+label{
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+input,textarea{
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid var(--muted-text-color);
+    outline: 0px;
+    color: var(--primary-color);
+}
+
+textarea {
+  height: 100px;
+  resize: none;
+  overflow-y: auto;
+}
+
+.option {
+  cursor: pointer;
+  width: 100%;
+  height: auto;
+}
+
+.option input {
+  display: none;
+}
+
+.option span{
+  display: block;
+  padding: 12px 20px;
+  background-color: white;
+  color: var(--primary-color);
+  border: 2px solid #ddd;
+  border-radius: 15px;
+  transition: 0.2s;
+}
+
+.option h4{
+  font-size: 16px;
+}
+
+.option input:checked + span {
+  background-color: var(--primary-color);
+  color: white;
+  border: 1px solid var(--muted-text-color);
+}
+
+.date{
+    background-color: #C8DFDB;
+    border-width:0px;
+}
+
+.submitBtn{
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    padding-block: 10px;
+    transition: var(--trans);
+}
+.submitBtn:hover{
+   transform: translateY(-2px);
+   background-color: var(--second-color);
+}

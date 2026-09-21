@@ -1,0 +1,5 @@
+@if (showMessage) {
+<div class="massege" [class.success]="messageData.success" [class.error]="!messageData.success">
+    <h2>{{messageData.message}}</h2>
+</div>
+}

@@ -1,0 +1,40 @@
+.massege{
+    position: fixed;
+    left: 40px;
+    bottom: 40px;
+    padding: 10px 15px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 5px;
+    animation: showMassege 0.6s ease;
+}
+
+.massege h2{
+    font-size: 20px;
+}
+
+.success{
+    background-color: var(--bg-success);
+}
+
+.error{
+    background-color: red;
+}
+
+close{
+    animation: closeMassege 0.6s ease;
+}
+
+
+/* anamtions*/
+
+@keyframes showMassege {
+    from{
+        transform: translateY(30px);
+        opacity: 0;
+    }
+
+    to{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}

@@ -1,0 +1,74 @@
+<div class="formAppointmentOverlay  d-flex justify-content-center align-items-start">
+    <div class="container d-flex justify-content-center align-items-center">
+        <div class="formAppointment">
+            <div class="topform p-3 position-relative">
+                <span class="subtitle d-flex text-start">تأكيد الحجز</span>
+                <h3 class="text-white mainfont fs-4">احجز موعدك الآن</h3>
+                <button type="button" (click)="close()" class="closebtn position-absolute"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <form class="p-4 overflow-y-scroll" [formGroup]="bookingForm" (ngSubmit)="submitBooking()">
+                <div class="feild mb-3">
+                    <label for="Name">الاسم الكامل*</label>
+                    <input placeholder="ادخل اسمك كامل" id="Name" type="text" formControlName="name">
+                    @if (submitted && bookingForm.controls.name.errors?.['required']) {
+                        <small class="note text-danger fs-6">الاسم مطلوب*</small>
+                    }
+                    @else if (submitted && bookingForm.controls.name.errors?.['minlength']) {
+                       <small class="note text-danger fs-6">يجب ان يكون الوصف 3 أحرف على الأقل</small>
+                    }
+                </div>
+                <div class="feild mb-3">
+                    <label for="Number">رقم الهاتف*</label>
+                    <input  placeholder="01XXXXXX" id="Number" type="tel" formControlName="phone">
+                    @if (submitted && bookingForm.controls.phone.errors?.['required']) {
+                        <small class="note text-danger fs-6">رقم الهاتف مطلوب*</small>
+                    } @else if (submitted && bookingForm.controls.phone.errors?.['pattern']) {
+                       <small class="note text-danger fs-6">من فضلك ادخل رقم هاتفك بشكل صحيح</small>
+                    }
+                </div>
+                <div class="feild mb-3">
+                    <label for="problem">سبب الزيارة أو المشكلة *</label>
+                    <textarea placeholder="اكتب وصفاً مختصراً لمشكلتك..." name="" id="problem" formControlName="problem"></textarea>               
+                    @if (submitted && bookingForm.controls.problem.errors?.['required']) {
+                        <small class="note text-danger fs-6">سبب الزيارة مطلوبة*</small>
+                    }
+                    @else if (submitted && bookingForm.controls.problem.errors?.['minlength']) {
+                        <small class="note text-danger fs-6">يجب ان يكون الاسم 5 أحرف على الأقل</small>
+                    }
+                </div>
+                <div class="feild mb-3">
+                    <label for="appointment_type">نوع الزيارة *</label>
+                    <div class="radio d-flex justify-content-center align-items-center gap-3 w-100">
+                    <label class="option text-center">
+                        <input id="new" type="radio" value="new" formControlName="appointment_type">
+                        <span>
+                           <i class="fa-solid fa-square-plus d-block m-auto mb-3"></i>
+                           <h4 class="">كشف جديد</h4> 
+                           <h4 class="">اول زيارة للعيادة</h4> 
+                        </span>
+                    </label>
+                    <label class="option text-center">
+                      <input id="follow_up" type="radio" value="follow_up" formControlName="appointment_type">
+                        <span>
+                        <i class="fa-solid fa-rotate-right d-block m-auto mb-3"></i>
+                        <h4 class="">إعادة كشف</h4> 
+                        <h4 class="">متابعة حالة سابقة</h4> 
+                        </span>                    
+                    </label>
+                    </div>
+                    @if (submitted && bookingForm.controls.appointment_type.errors?.['required']) {
+                        <small class="note text-danger fs-6">نوع الزيارة مطلوبة*</small>
+                    }
+                </div>
+                <div class="feild mb-5">
+                    <label for="date">الموعد المختار</label>
+                    <input class="date fw-bold " value="{{selectedSlot?.date + 'T' + selectedSlot?.time | date:'EEEE,d MMMM y — h:mm a'}}" disabled id="date" type="text">
+                </div>
+                @if (submitted && bookingForm.invalid) {
+                    <small class="note fw-bold text-danger fs-6 mb-5">من فضلك راجع البيانات المدخلة!</small>
+                 }
+                <button class="submitBtn btn w-100 fw-bold text-white" type="submit">تأكيد الحجز</button>
+            </form>
+        </div>
+    </div>
+</div>

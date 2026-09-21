@@ -6,17 +6,17 @@
     </div>
     <div class="bookDate">
     @for (group of groupedSlots().entries(); track $index) {
-         <h3>{{group[0] | date:"EEEE, d MMMM y "}}</h3>
-        <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1">
+        <h3 class="titleDate mb-4 position-relative">{{group[0] | date:"EEEE, d MMMM y"}}</h3>
+        <div class="row mb-5 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1 g-3">
             @for (slot of group[1]; track $index) {
               <div class="col">
-                <div class="date d-flex justify-content-between align-items-center">
+                <div class="date bg-white rounded-4 p-3 d-flex justify-content-between align-items-center">
                   <div class="rghit">
-                    <span class="d-block">متاح</span>
-                    <h4>{{slot.time}}</h4>
+                    <span class="subtitleTime mb-2 d-block">متاح</span>
+                    <h4 class="titleTime">{{slot.date + 'T' + slot.time | date:"h:mma"}}</h4>
                   </div>
                   <div class="left">
-                    <button type="button" class="bookBtn">احجز دلوقتي</button>
+                    <button (click)="openFormAppointment(slot)" class="bookBtn btn text-white" type="button">احجز دلوقتي</button>
                   </div>
                 </div> 
               </div>
@@ -24,6 +24,13 @@
         </div>
     }
     </div>
+    @if (showForm) {
+        <app-booking-form [selectedSlot]="selectedSlot" (closeform)="showForm = false" (submitForm)="handleBooking($event)"></app-booking-form>
+    }
+
+    @if (massegeappoinmernt()) {
+     <app-masseges [messageData]="massegeappoinmernt()!"></app-masseges>
+    }
   </div>
 </section>
 

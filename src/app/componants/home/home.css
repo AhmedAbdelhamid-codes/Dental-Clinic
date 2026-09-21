@@ -31,6 +31,10 @@ background-color: var(--third-color);
     animation: fadeup 0.8s 0.3s ease both;
 }
 
+.details .btns{
+    animation: fadeup 0.8s 0.4s ease both;
+}
+
 .details .mainBtn{
     color: var(--primary-text-color);
     background-color: var(--primary-color);
@@ -39,7 +43,6 @@ background-color: var(--third-color);
     border-radius: 25px;
     padding: 10px 15px;
     transition: var(--trans);
-    animation: fadeup 0.8s 0.4s ease both;
 }
 .details .mainBtn:hover{
     background-color: var(--second-color);
@@ -55,7 +58,6 @@ background-color: var(--third-color);
     border-radius: 25px;
     padding: 10px 15px;
     transition: var(--trans);
-    animation: fadeup 0.8s 0.5s ease both;
 }
 .details .ghostBtn:hover{
     background-color: var(--second-color);
