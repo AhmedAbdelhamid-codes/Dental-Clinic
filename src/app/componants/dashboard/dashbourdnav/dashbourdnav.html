@@ -1,0 +1,34 @@
+<header>
+    <nav class="mynav navbar fixed-top">
+  <div class="container">
+    <div class="right d-flex justify-content-center align-items-center gap-3">
+     <button type="button" (click)="logout()" class="logoutbtn btn p-0 mt-1 d-flex justify-content-center align-items-center"><i class="fa-solid fa-power-off"></i></button>  
+     <div class="detailsUser">
+        <h2 class="mainfont m-0 p-0 text-white userName">{{staff.name}}</h2>
+        <p class="paragraph m-0 p-0 text-white">{{staff.tittle}}</p>
+    </div>
+    </div>
+    <button class="navbar-toggler text-white bg-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+      <div class="offcanvas-header position-relative">
+        <h5 class="offcanvas-title mainfont text-white" id="offcanvasDarkNavbarLabel" >لوحة التحكم <span class="subtitle d-block mainfont">عيادة الدكتور مصطفى محمد سيد</span></h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <!-- <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" routerLink="" routerLinkActive="active"><i class="fa-solid fa-house"></i> الرئيسية</a>
+          </li>
+        </ul> -->
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" routerLink="slots" routerLinkActive="active"><i class="fa-solid fa-calendar-days"></i> المواعيد</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+</header>

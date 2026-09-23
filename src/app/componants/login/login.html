@@ -1,1 +1,31 @@
-<p>login works!</p>
+<section class="loginForm">
+    <div class="container w-100 h-100 d-flex justify-content-center align-items-center">
+        <form class="text-center" [formGroup]="loginForm" (ngSubmit)="submitForm()" >
+          <h1 class="titleForm mb-5 mainfont">تسجيل الدخول</h1>
+          <div class="field mb-5 w-100 position-relative">
+            <i class="fa-solid fa-envelope position-absolute"></i>
+            <input class="w-100" type="email" formControlName="Email" placeholder="">
+            <label class="position-absolute">Email</label>
+            @if ( submited && loginForm.controls.Email.errors?.['required']) {
+             <small class="note text-start text-danger fs-6">الايميل مطلوب*</small>
+            }
+          </div>
+          <div class="field w-100 mb-4 position-relative">
+            <i class="fa-solid fa-lock position-absolute"></i>            
+            <input dir="ltr" class="w-100" type="password" formControlName="Password" placeholder="">
+            <label class="position-absolute">Password</label>
+            @if ( submited && loginForm.controls.Password.errors?.['required']) {
+             <small class="note text-start text-danger fs-6">الباسوورد مطلوب*</small>
+            }
+          </div>
+          <button type="submit" class="submitBtn mb-3 w-100">تسجيل الدخول</button>
+          <div class="return d-flex justify-content-center align-items-center gap-2">
+            <p class="m-0">الرجوع لصفحة الزائر:</p>
+            <a routerLink="/">صفحة الزائر</a>
+          </div>
+        </form>
+        @if (showMassege) {
+            <app-masseges  [messageData]="massegeresult!"></app-masseges>
+        }
+    </div>
+</section>

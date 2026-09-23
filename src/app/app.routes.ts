@@ -47,6 +47,20 @@ export const routes: Routes = [
         loadComponent: () =>
         import('./componants/login/login')
         .then(c => c.Login)
+    },
+    {
+        path: "dashboard",
+        title:"لوحة تحكم الطاقم الطبي",
+        loadComponent: () =>
+        import('./componants/dashboard/dashboard')
+        .then(c => c.Dashboard),
+        children: [
+          {
+            path: "slots",
+            loadComponent: () =>
+             import('./componants/dashboard/slotscom/slotscom')
+              .then(c => c.Slotscom)
+          }
+        ]
     }
-    
 ];

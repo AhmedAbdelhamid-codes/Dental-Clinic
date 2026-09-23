@@ -7,13 +7,14 @@ import { ServiceResult } from '../../service-result';
   styleUrl: './masseges.css'
 })
 export class Masseges implements OnChanges {
-
-@Input() messageData!: ServiceResult;
-  private readonly cdr = inject(ChangeDetectorRef);
-
+  
 showMessage:boolean = false;
+@Input() messageData!: ServiceResult;
 
-  ngOnChanges(changes: SimpleChanges): void {
+private readonly cdr = inject(ChangeDetectorRef);
+
+
+ngOnChanges(changes: SimpleChanges): void {
 
     if (changes['messageData']) {
 

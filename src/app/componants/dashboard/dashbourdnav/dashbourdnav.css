@@ -1,0 +1,59 @@
+.mynav{
+    background-color: var(--primary-color);
+    height: 70px;
+}
+
+.mynav .logoutbtn{
+ color: rgb(238, 0, 0);
+ width: 40px;
+ height: 40px;
+ border-radius: 50%;
+ border: 1px solid var(--muted-text-color);
+ transition: var(--trans);
+}
+
+.mynav .logoutbtn:hover{
+background-color: brown;
+transform: translatex(-3px);
+}
+
+.mynav .userName{
+    font-size: 24px;
+}
+
+.offcanvas{
+    background-color: #1A2E45;
+}
+
+.offcanvas .offcanvas-header::after{
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    width: 90%;
+    height: 0.5px;
+    opacity: 0.5;
+    background-color: var(--muted-text-color);
+}
+
+.offcanvas .offcanvas-header .offcanvas-title{
+    line-height: 1.2;
+}
+
+.offcanvas .offcanvas-header .subtitle{
+    color: var(--third-color);
+}
+
+.offcanvas .offcanvas-body .nav-link{
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.offcanvas .offcanvas-body .nav-link:hover{
+    color: var(--primary-color);
+}
+ 
+.offcanvas .offcanvas-body .nav-link.active{
+color: var(--primary-color);
+}

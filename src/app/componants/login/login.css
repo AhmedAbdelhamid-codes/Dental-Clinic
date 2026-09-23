@@ -1,0 +1,68 @@
+.loginForm{
+    height: 100vh;
+    background:linear-gradient(90deg,#3368a0a2,#66a3bf96),url("/photos/photo-1629909613654-28e377c37b09.avif") 
+    center / cover no-repeat;
+}
+
+form{
+    flex: 1 1 400px;
+    max-width: 450px;
+    height: auto;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.367);
+    backdrop-filter: blur(5px);
+    border-radius: 25px;
+    border: 1px solid white;
+}
+
+.field label,i{
+    color: black;
+    font-size: 20px;
+    pointer-events: none;
+    background-color: transparent;
+    transition: var(--trans);
+}
+
+.field label{
+ left: 5px;
+ transform: translatey(5px);
+}
+
+.field i{
+  right: 5px;
+  transform: translatey(10px);
+}
+
+.field input{
+    padding: 10px 15px;
+    width: 100%;
+    border: 0px solid black;
+    border-bottom: 2px solid black;
+    background-color: transparent;
+    outline: none;
+    font-size: 15px;
+}
+
+.field input:focus ~ label,
+.field input:not(:placeholder-shown)~ label{
+    transform: translateY(-16px) translateX(4px) scale(0.9);
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border: none;
+}
+
+.submitBtn{
+    font-size: 18px;
+    font-weight: bold;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    padding-block: 10px;
+    transition: var(--trans);
+}
+.submitBtn:hover{
+   transform: translateY(-2px);
+   color: white;
+   background-color: var(--second-color);
+}

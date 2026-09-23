@@ -7,6 +7,7 @@ import { AppointmentInsert } from '../../appointment-insert';
 import { Appointment } from '../../appointment';
 import { ServiceResult } from '../../service-result';
 import { Masseges } from '../masseges/masseges';
+
 @Component({
   imports: [DatePipe, BookingForm,Masseges],
   selector: 'app-booking',
