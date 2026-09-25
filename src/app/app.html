@@ -1,1 +1,9 @@
+@if (isLoading()) {
+<app-loding-page></app-loding-page>
+}@else {
 <router-outlet></router-outlet>
+@if (showMassege) {
+    <app-masseges  [messageData]="massegeSession()!"></app-masseges>
+}
+}
+

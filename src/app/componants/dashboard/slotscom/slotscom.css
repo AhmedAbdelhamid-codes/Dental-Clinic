@@ -31,7 +31,6 @@ form label{
 }
 
 form input{
-padding: 10px;
 border-radius: 15px;
 background-color: var(--third-color);
 }
@@ -74,7 +73,7 @@ background-color: var(--primary-color);
 .slotssec .slot::before{
 content: "";
 position: absolute;
-bottom: -4px;
+bottom: -10px;
 width: 100%;
 height: 0.5px;
 opacity: 0.5;

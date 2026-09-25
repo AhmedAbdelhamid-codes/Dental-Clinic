@@ -6,32 +6,56 @@
       </div>
       <div class="addSlots p-4 mb-5">
         <h2 class="mb-5 mainfont fs-5">إضافة موعد جديد</h2>
-        <form [formGroup]="addslot" () class="d-flex justify-content-center align-items-center gap-3 flex-wrap ">
+        <form [formGroup]="addSlot" (ngSubmit)="addSlotsSubmit()" class="d-flex justify-content-center align-items-center gap-3 flex-wrap ">
            <div class="feild position-relative">
                 <label for="Date" class="position-absolute">التاريخ*</label>
-                <input class="w-100 border border-success border-opacity-25" id="Date" type="date" formControlName="date" required="">
+                <input class="w-100 p-2 border border-success border-opacity-25" id="Date" type="date" formControlName="date" required="">
             </div>
             <div class="feild position-relative">
                 <label for="Time" class="position-absolute">الوقت*</label>
-                <input class="w-100 border border-success border-opacity-25"  id="Time" type="time" formControlName="time">
+                <input class="w-100  p-2 border border-success border-opacity-25"  id="Time" type="time" formControlName="time" required="">
             </div>
             <button type="submit" class="addBtn btn text-white"><i class="fa-solid fa-plus plusIcon"></i>إضافة</button>
         </form>
         </div>
         <div class="slotssec p-4">
           <h2 class="titelsec mainfont mb-5 fs-6 position-relative">قائمة المواعيد ({{slots().length.toString()}})</h2>
-          @for (slot of slots(); track $index) {
-            <div class="slot mb-4 position-relative d-flex justify-content-between align-items-center">
-            <div class="dateTime">
-               <h3 class="date fs-5">{{slot.date| date:"EEEE, d MMMM y"}}</h3>
-               <h3 class="time fs-6">{{slot.date + 'T' + slot.time | date:"h:mma"}}</h3>
-            </div>
-            <div class="btnsControl d-flex justify-content-center align-content-center gap-2">
-              <button type="button" class="updateBtn btn">تعديل</button>
-              <button type="button" class="deletBtn btn">حذف</button>
-            </div>
+          @for (slot of slots(); track slot.id) {
+            <div class="slot mb-4 position-relative">
+            @if (editingSlotId() == slot.id) {
+               <form [formGroup]="updateslot" (ngSubmit)="updateSoltsSubmit(slot)" class="d-flex justify-content-center align-items-center gap-3 flex-wrap ">
+                 <div class="feild position-relative">
+                  <input class="w-100 p-2 border border-success border-opacity-25" id="Date" type="date" formControlName="date" required="">
+                 </div>
+                 <div class="feild position-relative">
+                  <input class="w-100 p-2 border border-success border-opacity-25"  id="Time" type="time" formControlName="time" required="">
+                 </div>
+                 <div class="btnsForUpdate d-flex justify-content-center align-items-center gap-3 ">
+                  <button type="submit" class="addBtn btn text-white">حفظ</button>
+                  <button type="button" class="addBtn btn text-white" (click)="closeFormUdate()" >الغاء</button>
+                 </div>
+               </form>
+              }@else {
+                <div class="d-flex justify-content-between align-items-center">
+                <div class="dateTime ">
+                  <h3 class="date fs-5">{{slot.date| date:"EEEE, d MMMM y"}}</h3>
+                  <h3 class="time fs-6">{{slot.date + 'T' + slot.time | date:"h:mma"}}</h3>
+                </div>
+                <div class="btnsControl d-flex justify-content-center align-content-center gap-2">
+                 <button type="button" class="updateBtn btn " (click)="showFormUpdate(slot)">تعديل</button>
+                 @if (isDeleting()) {
+                 <button type="button" class="deletBtn btn" disabled>حذف</button>
+                 }@else {
+                  <button type="button" class="deletBtn btn" (click)="deleteSlot(slot.id)">حذف</button>
+                 }
+                </div>
+                </div>
+              }
            </div>
           }
         </div>
+        @if (showMassege) {
+          <app-masseges [messageData]="massegeSlot()!"></app-masseges>
+        }
       </div>
 </section>
