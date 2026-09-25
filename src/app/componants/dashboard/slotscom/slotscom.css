@@ -91,3 +91,11 @@ color: rgb(155, 53, 53);
 border-radius: 15px;
 background-color: #FEE2E2;
 }
+
+.status{
+   left: 15px;
+   top: -26px; 
+   font-size: 14px;
+   padding: 0px 10px;
+   border-radius: 20px;
+}

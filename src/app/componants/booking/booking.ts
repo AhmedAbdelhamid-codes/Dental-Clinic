@@ -28,10 +28,10 @@ private readonly slotService = inject(SlotService)
 private readonly appointment = inject(Appointment)
 
 async ngOnInit(){
-    this.soltsData.set(await this.slotService.getSlots()) 
+  this.soltsData.set(await this.slotService.getAvailableSlots("available")) 
 
-    this.groupSlots()
-    console.log(this.soltsData())
+  this.groupSlots()
+  console.log(this.soltsData())
 }
 
 groupSlots() {
@@ -54,9 +54,13 @@ this.selectedSlot = slot
 }
 
 async handleBooking(Data:AppointmentInsert){
-const result = await this.appointment.createAppointment(Data)
+const result = await this.appointment.bookAppointment(Data)
 
 if (result) {
+  this.soltsData.set(await this.slotService.getAvailableSlots("available")) 
+
+  this.groupSlots()
+
   this.massegeappoinmernt.set({
     success: true,
     message: "تم إرسال طلب الحجز - سيتواصل معك فريق العيادة لتأكيد الموعد"
@@ -69,7 +73,6 @@ if (result) {
 }
 
 this.showMassge =true
-
 
 console.log(this.massegeappoinmernt)
 }

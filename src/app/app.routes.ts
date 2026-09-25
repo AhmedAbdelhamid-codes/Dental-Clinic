@@ -60,6 +60,12 @@ export const routes: Routes = [
             loadComponent: () =>
              import('./componants/dashboard/slotscom/slotscom')
               .then(c => c.Slotscom)
+          },
+          {
+            path: "appointments",
+            loadComponent: () =>
+             import('./componants/dashboard/appointments/appointments')
+              .then(c => c.Appointments)
           }
         ]
     }

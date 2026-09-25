@@ -1,0 +1,13 @@
+.appointments{
+    background-color: var(--third-color);
+    min-height: 100vh;
+    padding-block: 100px;
+}
+
+.titleSec{
+    color: var(--primary-color);
+}
+
+.paragraph{
+    color: var(--second-color);
+}

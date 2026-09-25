@@ -45,7 +45,8 @@ submitBooking(){
   }
 
 console.log(appointmentData);
-  this.submitForm.emit(appointmentData)
-  this.closeform.emit()
+
+this.submitForm.emit(appointmentData)
+this.closeform.emit()
 }
 }

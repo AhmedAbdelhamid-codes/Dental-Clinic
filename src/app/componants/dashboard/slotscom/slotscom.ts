@@ -35,7 +35,7 @@ updateslot = new FormGroup({
 })
 
 async ngOnInit() {
-  this.slots.set(await this.slotService.getSlots()) 
+  this.slots.set(await this.slotService.getAllSlots()) 
   console.log(this.slots())
 }
 
@@ -70,7 +70,7 @@ async addSlotsSubmit(){
     this.showMassege = true
 
 
-    this.slots.set(await this.slotService.getSlots()) 
+    this.slots.set(await this.slotService.getAllSlots()) 
 }
 
 showFormUpdate(slot:Slots){
@@ -155,11 +155,11 @@ async deleteSlot(id: number) {
 
   this.showMassege = true;
 
-  this.slots.set(await this.slotService.getSlots())
+  this.slots.set(await this.slotService.getAllSlots())
 
   setTimeout(() =>{
     this.isDeleting.set(false)
-  },5000)
+  },2000)
 }
 
 }

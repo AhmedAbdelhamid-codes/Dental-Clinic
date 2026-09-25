@@ -8,8 +8,24 @@ import { UpdateSlot } from './update-slot';
 })
 export class SlotService {
 
-// slect
-async getSlots(){
+// slectAvailableSlots
+
+async getAvailableSlots(status:string){
+
+const {data, error} = await supabase.from("appointment_slots").select("*").eq("status",status)
+
+
+if(error){
+  console.log(error)
+  return []
+}
+
+return data
+
+}
+
+// slectAllSlots
+async getAllSlots(){
   const {data , error } = await supabase.from("appointment_slots").select("*")
       
  if (error) { 

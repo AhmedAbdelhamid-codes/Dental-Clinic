@@ -7,16 +7,24 @@ import { supabase } from './core/supabase';
 })
 export class Appointment {
 
-async createAppointment(data:AppointmentInsert){
+async bookAppointment(data: AppointmentInsert) {
 
-const {error} = await supabase.from('appointments').insert(data)
+  const { error } = await supabase.rpc(
+    'book_appointment',
+    {
+      p_patient_name: data.patient_name,
+      p_phone: data.phone,
+      p_problem: data.problem,
+      p_appointment_type: data.appointment_type,
+      p_slot_id: data.slot_id
+    }
+  );
 
-if(error){
-    console.log(error)
-    return false
-}else{
-    return true
-}
+  if (error) {
+    console.log(error);
+    return false;
+  }
 
+  return true;
 }
 }

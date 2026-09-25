@@ -21,7 +21,7 @@
         <div class="slotssec p-4">
           <h2 class="titelsec mainfont mb-5 fs-6 position-relative">قائمة المواعيد ({{slots().length.toString()}})</h2>
           @for (slot of slots(); track slot.id) {
-            <div class="slot mb-4 position-relative">
+            <div class="slot mb-5 position-relative">
             @if (editingSlotId() == slot.id) {
                <form [formGroup]="updateslot" (ngSubmit)="updateSoltsSubmit(slot)" class="d-flex justify-content-center align-items-center gap-3 flex-wrap ">
                  <div class="feild position-relative">
@@ -36,7 +36,8 @@
                  </div>
                </form>
               }@else {
-                <div class="d-flex justify-content-between align-items-center">
+                <div class="status position-absolute" [class.bg-success]="slot.status === 'available'" [class.bg-danger]="slot.status === 'booked' ">{{slot.status}}</div>
+                <div class="slotInner d-flex justify-content-between align-items-center">
                 <div class="dateTime ">
                   <h3 class="date fs-5">{{slot.date| date:"EEEE, d MMMM y"}}</h3>
                   <h3 class="time fs-6">{{slot.date + 'T' + slot.time | date:"h:mma"}}</h3>
