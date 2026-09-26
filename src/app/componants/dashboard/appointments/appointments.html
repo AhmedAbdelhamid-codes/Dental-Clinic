@@ -4,11 +4,14 @@
         <h1 class="titleSec mainfont">الحجوزات</h1>
         <p class="paragraph">راجع طلبات الحجز الواردة وحدد السعر ثم اقبل أو ارفض</p>
       </div>
-      @for (appointment of appointments(); track $index) {
-        @for (slot of slots(); track $index) {
+      @if (appointments().length === 0) {
+         <h2 class="titleSec mainfont d-flex justify-content-center align-items-center" style="height: 50vh;">لا يوجد حجوزات بعد</h2>
+      }@else {
+        @for (appointment of appointments(); track $index) {
+          @for (slot of slots(); track $index) {
             @if (slot.id === appointment.slot_id) {
-        <div class="appointment mb-4 w-100">
-        <div class="top">
+          <div class="appointment mb-4 w-100">
+          <div class="top">
           <div class="detailsPatient position-relative mb-2 d-flex justify-content-between align-items-center">
             <div class="Patient">
              <span class="appointmentType mb-2 d-inline-block">{{getAppointmentTypeLabel(appointment.appointment_type)}}</span>
@@ -48,9 +51,10 @@
             }
         }
       }
-       @if (showMassege) {
+      }
+      @if (showMassege) {
           <app-masseges [messageData]="massegeAppointment()!"></app-masseges>
-        }
+      }
     </div>
 </section>
 
