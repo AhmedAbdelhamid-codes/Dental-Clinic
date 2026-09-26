@@ -4,7 +4,7 @@ import { Slots } from '../../slots';
 import { DatePipe } from '@angular/common';
 import { BookingForm } from '../booking-form/booking-form';
 import { AppointmentInsert } from '../../appointment-insert';
-import { Appointment } from '../../appointment';
+import { AppointmentService } from '../../appointmentService';
 import { ServiceResult } from '../../service-result';
 import { Masseges } from '../masseges/masseges';
 
@@ -25,7 +25,7 @@ massegeappoinmernt = signal<ServiceResult | null>(null);
 showMassge:boolean= false
 
 private readonly slotService = inject(SlotService)
-private readonly appointment = inject(Appointment)
+private readonly appointment = inject(AppointmentService)
 
 async ngOnInit(){
   this.soltsData.set(await this.slotService.getAvailableSlots("available")) 

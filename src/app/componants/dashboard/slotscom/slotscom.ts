@@ -19,7 +19,7 @@ export class Slotscom implements OnInit{
 slots: WritableSignal<Slots[]> = signal([])
 massegeSlot = signal<ServiceResult | null>(null);
 showMassege: boolean = false
-editingSlotId: WritableSignal<number | null> = signal(8)
+editingSlotId: WritableSignal<string | null> = signal('')
 isDeleting = signal<boolean>(false);
 
 private readonly slotService = inject(SlotService)
@@ -35,7 +35,7 @@ updateslot = new FormGroup({
 })
 
 async ngOnInit() {
-  this.slots.set(await this.slotService.getAllSlots()) 
+  this.slots.set(await this.slotService.getAvailableSlots('available')) 
   console.log(this.slots())
 }
 
@@ -70,7 +70,7 @@ async addSlotsSubmit(){
     this.showMassege = true
 
 
-    this.slots.set(await this.slotService.getAllSlots()) 
+    this.slots.set(await this.slotService.getAvailableSlots('available')) 
 }
 
 showFormUpdate(slot:Slots){
@@ -122,9 +122,10 @@ this.slots.update(slots =>
         ...slot,
         date: this.updateslot.value.date!,
         time: this.updateslot.value.time!
-      } :  slot
+      } :  slot2
    )
 )
+
 
 }
 
@@ -132,7 +133,7 @@ closeFormUdate(){
 this.editingSlotId.set(null);
 }
 
-async deleteSlot(id: number) {
+async deleteSlot(id: string) {
   this.isDeleting.set(true)
 
   const result = await this.slotService.deleteSlot(id);
@@ -155,11 +156,22 @@ async deleteSlot(id: number) {
 
   this.showMassege = true;
 
-  this.slots.set(await this.slotService.getAllSlots())
+  this.slots.set(await this.slotService.getAvailableSlots('available'))
 
   setTimeout(() =>{
     this.isDeleting.set(false)
-  },2000)
+  },3000)
 }
+
+getAppointmentTypeLabel(type:string): string{
+
+ const labels: Record<string, string> = {
+      booked: 'محجوز',
+      available: 'متاح',
+    };
+
+    return labels[type] ?? type;
+}
+
 
 }

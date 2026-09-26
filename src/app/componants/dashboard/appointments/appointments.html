@@ -4,6 +4,53 @@
         <h1 class="titleSec mainfont">الحجوزات</h1>
         <p class="paragraph">راجع طلبات الحجز الواردة وحدد السعر ثم اقبل أو ارفض</p>
       </div>
+      @for (appointment of appointments(); track $index) {
+        @for (slot of slots(); track $index) {
+            @if (slot.id === appointment.slot_id) {
+        <div class="appointment mb-4 w-100">
+        <div class="top">
+          <div class="detailsPatient position-relative mb-2 d-flex justify-content-between align-items-center">
+            <div class="Patient">
+             <span class="appointmentType mb-2 d-inline-block">{{getAppointmentTypeLabel(appointment.appointment_type)}}</span>
+             <h2 class="namePatient fs-4 fw-bold">{{appointment.patient_name}}</h2>
+             <a href="https://wa.me/{{appointment.phone}}" class="phonePatient d-block link-underline link-underline-opacity-0">{{appointment.phone}}</a>
+            </div>
+            <div class="status position-absolute">
+              <span>{{getAppointmentTypeLabel(appointment.status)}}</span>
+            </div>
+         </div>
+         <div class="detailsSlot">
+            <h3 class="date"><span class="subttile">المعاد:</span> {{slot.date + 'T' + slot.time| date:'EEEE,d MMMM y — h:mm a'}}</h3>
+            <h3 class="problem"><span class="subttile">سبب الزيارة:</span>{{appointment.problem}} </h3>
+          </div>
+        </div>
+        <div class="approvable">
+          <form [formGroup]="priceAppointment" (ngSubmit)="acceptAppointment(appointment,slot)" class="mb-3 d-flex justify-content-center align-content-center gap-3 flex-wrap">
+            <label class="fs-6 my-auto">سعر الكشف (ج.م) *</label>
+            <input class="w-100 text-start" type="number" placeholder="ادخل السعر" formControlName="price" (input)="showAcceptBtn(appointment)">
+            <div class="btnsForapprovable d-flex justify-content-center align-items-center gap-3 ">
+                 @if(priceAppointment.controls.price.value && idForShow === appointment.id ){
+                  <button type="submit" class="btn agreeBtn text-white"><i class="fa-solid fa-check me-1"></i>قبول</button>
+                 }@else {
+                  <button type="button" class="btn disabledBtn text-white"><i class="fa-solid fa-check me-1"></i>قبول</button>
+                 }
+                  <button type="button" class="btn disagreeBtn text-white" (click)="rejectAppointment(appointment,slot)"><i class="fa-solid fa-xmark me-1"></i>رفض</button>
+            </div>
+          </form>
+          @if (idForAccept === appointment.id && priceAppointment.controls.price.errors?.['required']) {
+             <small class="note text-danger fs-6">مطلوب ادخال السعر</small>
+           }@else if (idForAccept === appointment.id && priceAppointment.controls.price.errors?.['pattern']) {
+             <small class="note text-danger fs-6">يجب ان يكون السعر عبارة عن ارقام صحيحة</small>       
+           }
+            <span class="note d-block text-warning fw-bold">⚠ حدد سعر الكشف أولاً لتتمكن من القبول</span>
+          </div>
+        </div>
+            }
+        }
+      }
+       @if (showMassege) {
+          <app-masseges [messageData]="massegeAppointment()!"></app-masseges>
+        }
     </div>
 </section>
 

@@ -96,6 +96,7 @@ background-color: #FEE2E2;
    left: 15px;
    top: -26px; 
    font-size: 14px;
-   padding: 0px 10px;
+   padding: 2px 15px;
    border-radius: 20px;
+   font-weight: 500;
 }

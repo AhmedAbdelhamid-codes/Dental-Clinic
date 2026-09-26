@@ -11,3 +11,107 @@
 .paragraph{
     color: var(--second-color);
 }
+
+.appointment{
+    background-color: white;
+    border-radius: 20px;
+}
+
+.top{
+    padding: 20px;
+}
+
+.appointment .Patient .appointmentType{
+    color: var(--primary-color);
+    padding: 5px 10px;
+    background-color: #C8DFDB;
+    font-size: 14px;
+    border-radius: 20px;
+}
+
+.appointment .Patient .phonePatient{
+    font-size: 18px;
+    transition: var(--trans);
+    color: black;
+}
+.appointment .Patient .phonePatient:hover{
+    color: var(--primary-color);
+    transform: translatex(-3px);
+}
+
+.appointment .status{
+    top: 0px;
+    left: 10px;
+    color: #99460E;
+    background-color: #FEF3C7;
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.appointment .detailsSlot .date{
+    font-size: 16px;
+}
+
+.appointment .detailsSlot .problem{
+    font-size: 16px;
+}
+
+.appointment .detailsSlot .subttile{
+    color: var(--primary-color);
+}
+
+.approvable{
+    background-color: var(--primary-color);
+    padding: 20px;
+    border-radius: 0px 0px 20px 20px;
+}
+
+form label{
+   color: white
+}
+
+form input{
+  flex: 1 1 150px;
+}
+
+form input{
+ color: var(--primary-color);
+ font-size: 16px;
+ font-weight: bold;
+ outline: 0px;
+ border-radius: 15px;
+ border: 1px solid white;
+}
+
+form .btnsForapprovable,form label{
+  flex: 0 0 auto;
+}
+
+form .agreeBtn, form .disagreeBtn{
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+} 
+
+form .agreeBtn{
+    background-color: #059669;
+} 
+
+form .disagreeBtn{
+    background-color: #DC2626;
+} 
+
+.note{
+    font-size: 14px;
+}
+
+.disabledBtn{
+    cursor: not-allowed;
+    color: rgba(255, 255, 255, 0.382);
+    padding: 5px 10px;
+    border-radius: 15px;
+    background-color: #059669;
+    opacity: 0.5;
+}

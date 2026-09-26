@@ -1,5 +1,5 @@
 export interface Slots {
-    id:number,
+    id:string,
     date:string,
     time:string,
     status:string

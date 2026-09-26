@@ -65,7 +65,7 @@ return true
 
 // delet
 
-async deleteSlot(id: number) {
+async deleteSlot(id: string) {
   const { error } = await supabase.from('appointment_slots').delete().eq('id', id);
 
   if (error) {

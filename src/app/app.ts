@@ -5,6 +5,7 @@ import { LodingPage } from './componants/loding-page/loding-page';
 import { Masseges } from './componants/masseges/masseges';
 import { ServiceResult } from './service-result';
 import { StaffService } from './staff-service';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -30,8 +31,8 @@ async ngOnInit() {
       success: false,
       message: "حدث خطا اثناء تسجيل الدخول برجاء اعادة المحاولة"
     })
-    this.showMassege = true
     this.isLoading.set(false)
+    this.showMassege = true
   } 
   else if (session === null) {
     setTimeout(() =>{
