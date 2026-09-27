@@ -5,7 +5,6 @@ import { LodingPage } from './componants/loding-page/loding-page';
 import { Masseges } from './componants/masseges/masseges';
 import { ServiceResult } from './service-result';
 import { StaffService } from './staff-service';
-import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-root',

@@ -1,5 +1,48 @@
 <section class="home">
     <div class="container">
-        
+    <div class="topTittle mb-5">
+        <h1 class="titleHome mainfont">مرحبا <span class="subtitle">{{name}}</span></h1>
+        <p class="paragraph">إليك نظرة سريعة على حالة العيادة اليوم</p>
     </div>
+    <div class="detailsOfDental mb-5 row row-cols-lg-3 row-cols-md-3 row-cols-sm-2 row-cols-1 g-3">
+      <div class="col">
+        <div class="card">
+            <h2 class="titleCard mainfont">الحجوزات</h2>
+            <h3 class="numbers">{{appointments().length}}</h3>
+            <p class="paragraph fs-5">إجمالي الحجوزات</p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+            <h2 class="titleCard mainfont">المواعيد</h2>
+            <h3 class="numbers">{{slots().length}}</h3>
+            <p class="paragraph fs-5">المواعيد المتاحة</p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+            <h2 class="titleCard mainfont">المرضى</h2>
+            <h3 class="numbers">{{patient}}</h3>
+            <p class="paragraph fs-5">إجمالي المرضى</p>
+        </div>
+      </div>
+    </div>
+    <div class="lastAppointments p-3 bg-white rounded-4">
+        <div class="titleSec position-relative mb-5 d-flex justify-content-between align-items-center flex-wrap">
+            <h3 class="titleSec mainfont fs-2 m-0 ">آخر الحجوزات</h3>
+            <a routerLink="/dashboard/appointments" class="btn  rounded-5 text-white link-underline link-underline-opacity-0">عرض الكل <i class="fa-solid fa-arrow-left-long icon"></i></a>
+        </div>
+        <div class="appointments">
+            <div class="appointment mb-3 position-relative d-flex justify-content-between align-items-center flex-wrap">
+             <div class="detailsPatient">
+               <h3 class="patientName">محمد علي</h3>
+               <p class="date">كشف جديد — 2026-09-22 الساعة 09:00 AM</p>
+             </div>
+             <div class="status pending">
+               تحت الانتظار
+              </div>
+            </div>
+        </div>
+    </div>
+  </div>
 </section>

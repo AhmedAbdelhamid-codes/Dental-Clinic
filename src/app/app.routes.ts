@@ -55,9 +55,9 @@ export const routes: Routes = [
         import('./componants/dashboard/dashboard')
         .then(c => c.Dashboard),
         children: [
-           {
+          {
              path:"",
-             redirectTo:"home",
+             redirectTo:"dashboardHome",
              pathMatch:"full"
           },
           {

@@ -3,3 +3,79 @@
     min-height: 100vh;
     padding-block: 100px;
 }
+
+.subtitle{
+    color: var(--primary-color);
+}
+
+.card{
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.card .titleCard{
+   font-size: 40px;
+}
+
+.card .numbers{
+   font-size: 30px;
+   color: var(--primary-color);
+}
+
+.titleSec::before{
+content: "";
+position: absolute;
+bottom: -20px;
+width: 100%;
+height: 0.5px;
+background-color: var(--primary-color);
+opacity: 0.5;
+}
+
+
+.lastAppointments a{
+    background-color: var(--primary-color);
+    transition: var(--trans);
+}
+.lastAppointments a:hover{
+    background-color: var(--second-color);
+}
+
+.lastAppointments  .icon{
+    transition: var(--trans);
+}
+.lastAppointments a:hover .icon{
+    transform: translateX(-3px);
+}
+
+.appointment::before{
+content: "";
+position: absolute;
+bottom: -5px;
+width: 100%;
+height: 0.5px;
+background-color: var(--primary-color);
+}
+
+.detailsPatient .patientName{
+    font-size: 20px;
+    margin-bottom: -2px;
+}
+
+.detailsPatient .date{
+    font-size: 16px;
+    color: var(--primary-color);
+}
+
+.status{
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.pending{
+    color: #99460E;
+    background-color: #FEF3C7;
+}

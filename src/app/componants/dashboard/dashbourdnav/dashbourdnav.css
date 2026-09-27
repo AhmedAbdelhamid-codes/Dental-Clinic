@@ -17,10 +17,6 @@ background-color: brown;
 transform: translatex(-3px);
 }
 
-.mynav .userName{
-    font-size: 24px;
-}
-
 .offcanvas{
     background-color: #1A2E45;
 }

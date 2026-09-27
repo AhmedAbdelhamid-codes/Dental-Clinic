@@ -30,6 +30,20 @@ async bookAppointment(data: AppointmentInsert) {
   return true;
 }
 
+// get ALL Appointment
+
+async getAllAppointment(){
+  
+  const {data , error} = await supabase.from('appointments').select("*")
+
+  if(error){
+    console.log(error);
+    return []
+  }
+
+  return data
+}
+
 // get Pending Appointment
   
 async getPendingAppointment(status:string){
@@ -43,6 +57,10 @@ async getPendingAppointment(status:string){
 
   return data
 }
+
+// get Pending Appointment
+
+
 
 // update for accepted Appointment
 
