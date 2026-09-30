@@ -27,6 +27,11 @@
           <li class="nav-item">
             <a class="nav-link" routerLink="appointments" routerLinkActive="active"><i class="fa-solid fa-calendar-plus"></i> الحجوزات</a>
           </li>
+          @if (staff.role === 'doctor') {
+            <li class="nav-item">
+              <a class="nav-link" routerLink="addStaff" routerLinkActive="active"><i class="fa-solid fa-user-plus"></i> ادارة الطاقم</a>
+            </li>
+          }
         </ul>
       </div>
     </div>

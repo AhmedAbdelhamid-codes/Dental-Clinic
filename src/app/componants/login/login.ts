@@ -66,6 +66,4 @@ await this.staffService.getStaffById(result.user.id);
 
 this.router.navigate(["/dashboard"]);
 }
-
-
 }

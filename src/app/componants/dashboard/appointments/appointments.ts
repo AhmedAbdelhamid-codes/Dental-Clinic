@@ -93,8 +93,6 @@ async acceptAppointment(appointment:AppointmentsSlect,slot:Slots){
    ادارة عيادة دكتور مصطفي محمد سيد
    `
   this.openWhatsApp(appointment.phone,message);
-
-  await this.slotService.deleteSlot(slot.id)
   
   this.appointments.set(await this.appointmentService.getPendingAppointment('pending'))
   this.slots.set(await this.slotService.getAllSlots())
@@ -119,8 +117,6 @@ if(result === false){
    ادارة عيادة دكتور مصطفي محمد سيد
    `
   this.openWhatsApp(appointment.phone,message);
-
-  await this.slotService.deleteSlot(slot.id)
 
   this.appointments.set(await this.appointmentService.getPendingAppointment('pending'))
   this.slots.set(await this.slotService.getAllSlots())

@@ -1,5 +1,7 @@
 import { Routes } from '@angular/router';
+import { doctorguardGuard } from './doctorguard-guard';
 import { Public } from './componants/public/public';
+import { authGuardGuard } from './auth-guard-guard';
 
 export const routes: Routes = [
     {
@@ -54,6 +56,7 @@ export const routes: Routes = [
         loadComponent: () =>
         import('./componants/dashboard/dashboard')
         .then(c => c.Dashboard),
+        canActivateChild: [authGuardGuard],
         children: [
           {
              path:"",
@@ -62,21 +65,32 @@ export const routes: Routes = [
           },
           {
             path: "dashboardHome",
+            title:"لوحة تحكم الطاقم الطبي",
             loadComponent: () =>
              import('./componants/dashboard/dashboard-home/dashboard-home')
               .then(c => c.DashboardHome)
           },
           {
             path: "slots",
+            title:"المواعيد المتاحة",
             loadComponent: () =>
              import('./componants/dashboard/slotscom/slotscom')
               .then(c => c.Slotscom)
           },
           {
             path: "appointments",
+            title:"الحجوزات المتاحة",
             loadComponent: () =>
              import('./componants/dashboard/appointments/appointments')
               .then(c => c.Appointments)
+          },
+          {
+            path: "addStaff",
+            title:"ادارة الطاقم",
+            loadComponent: () =>
+             import('./componants/dashboard/add-staff/add-staff')
+              .then(c => c.AddStaff),
+             canActivate: [doctorguardGuard]
           }
         ]
     }

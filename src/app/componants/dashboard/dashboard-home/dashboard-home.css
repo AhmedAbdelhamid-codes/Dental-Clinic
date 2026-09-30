@@ -76,6 +76,16 @@ background-color: var(--primary-color);
 }
 
 .pending{
-    color: #99460E;
-    background-color: #FEF3C7;
+  color: #99460E;
+  background-color: #FEF3C7;
+}
+
+.accepted{
+  color: #0D6E55;
+  background-color: #D1FAE5;
+}
+
+.rejected{
+  color: #9C2D2D;
+  background-color: #FEE2E2;
 }

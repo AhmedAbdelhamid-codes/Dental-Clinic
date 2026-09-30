@@ -7,14 +7,26 @@ import { Staff } from './staff';
 })
 export class StaffService {
 
-currentStaff:Staff | null = null
+currentStaff: Staff | null = null;
+
+private staffPromise: Promise<void> | null = null;
 
 async getStaffById(id: string) {
-    
-  const {data, error} = await supabase.from("staff").select("*").eq('id',id).single()
-        
-
-  this.currentStaff = data
+  this.staffPromise = this.loadStaff(id);
+  await this.staffPromise;
 }
 
+private async loadStaff(id: string) {
+  const { data, error } = await supabase.from('staff').select('*').eq('id', id).single();
+
+  if (!error) {
+    this.currentStaff = data;
+  }
+}
+
+async waitForStaff() {
+  if (this.staffPromise) {
+    await this.staffPromise;
+  }
+}
 }

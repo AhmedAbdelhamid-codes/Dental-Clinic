@@ -58,8 +58,19 @@ async getPendingAppointment(status:string){
   return data
 }
 
-// get Pending Appointment
+// get last 4 Appointment
 
+async getlastAppointment(){
+  
+  const {data , error} = await supabase.from('appointments').select("*").order('created_at', { ascending: false }).limit(4);
+
+  if(error){
+    console.log(error);
+    return []
+  }
+
+  return data
+}
 
 
 // update for accepted Appointment
