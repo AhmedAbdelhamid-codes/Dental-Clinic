@@ -25,7 +25,6 @@ ngOnChanges(changes: SimpleChanges): void {
         this.showMessage = false;
         this.cdr.detectChanges();
         
-        console.log(this.showMessage);
       }, 5000);
     }
   }

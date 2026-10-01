@@ -1,1 +1,114 @@
-<p>add-staff works!</p>
+<section class="addStaff">
+    <div class="container">
+      <div class="top mb-5 d-flex justify-content-between align-items-start flex-wrap">
+       <div class="topTittle">
+        <h1 class="titleSec mainfont">إدارة الطاقم الطبي</h1>
+        <p class="paragraph">أضف أعضاء الفريق وحدد أدوارهم في النظام</p>
+       </div>
+       <button type="button" class="addBtn btn" [class]="hideOrNo" (click)="showAddForm()"><i class="fa-solid fa-plus"></i> إضافة عضو</button>
+       <button type="button" class="addBtn btn" [class]="showOrNo" (click)="closeAddForm()"><i class="fa-solid fa-x"></i>اغلاق</button>
+      </div>
+      <div class="formBox mb-5 bg-white p-4 rounded-5" [class]="showOrNo">
+            <h2 class="formTitle mainfont mb-5 fw-bold">بيانات العضو الجديد</h2>
+            <form [formGroup]="addStaffForm" (ngSubmit)="submitForm()" class="row g-5 row-cols-lg-2 row-cols-md-2 row-cols-sm-1 row-cols-1">
+                <div class="col">
+                 <div class="feild w-100 position-relative">
+                    <input class="w-100" formControlName="name" type="text" placeholder="اسم المستخدم" id="name">  
+                    <label class="position-absolute" for="name">الاسم الكامل*</label>
+                 </div>
+                 @if (submitted && addStaffForm.controls.name.errors?.['required']) {
+                        <small class="note text-danger fs-6">اسم العضو مطلوب*</small>
+                   }
+                </div>
+                <div class="col">
+                 <div class="feild w-100 position-relative">
+                    <input class="w-100 text-start" formControlName="email" placeholder="name@domain.com" type="email" id="email">
+                    <label class="position-absolute" for="email">البريد الإلكتروني*</label>
+                 </div>
+                 @if (submitted && addStaffForm.controls.email.errors?.['required']) {
+                        <small class="note text-danger fs-6">ايميل العضو مطلوب*</small>
+                 }@else if(submitted && addStaffForm.controls.email.errors?.['pattern']) {
+                        <small class="note text-danger fs-6">يرجى كتابة الاميل بشكل صحيح*</small>
+                   }
+                </div>
+                <div class="col">
+                 <div class="feild w-100 position-relative">
+                    <input class="w-100" formControlName="password" [type]="type" placeholder="........." id="password">  
+                    @if (addStaffForm.controls.password.value) {
+                      <i class="fa-solid position-absolute" [class.fa-eye]="type === 'password'" [class.fa-eye-slash]="type === 'text'" (click)="togglePass()"></i>              
+                    }
+                    <label class="position-absolute" for="password">كلمة المرور *</label>
+                 </div>
+                  @if (submitted && addStaffForm.controls.password.errors?.['required']) {
+                        <small class="note text-danger fs-6">باسوورد العضو مطلوب*</small>
+                   }
+                </div>
+                <div class="col">
+                 <div class="feild w-100 position-relative">
+                    <input class="w-100" type="text" formControlName="tittle" placeholder="ادخل لقب العضو" id="title">
+                    <label class="position-absolute" for="tittle">اللقب*</label>
+                 </div>
+                  @if (submitted && addStaffForm.controls.tittle.errors?.['required']) {
+                        <small class="note text-danger fs-6">لقب العضو مطلوب*</small>
+                   }
+                </div>
+                <div class="col">
+                 <div class="feild w-100 position-relative">
+                    <select class="w-100" formControlName="role" id="role">
+                        <option value="selected" disabled selected>اختر الدور الوظيفي</option>
+                        <option value="doctor">دكتور</option>
+                        <option value="assistant">مساعد الدكتور</option>
+                    </select>                    
+                    <label class="position-absolute" for="role">الدور الوظيفي*</label>
+                  </div>
+                  @if (submitted && addStaffForm.controls.role.errors?.['required']) {
+                        <small class="note text-danger fs-6">الدور الوظيفي للعضو مطلوب*</small>
+                   }
+                </div>
+                <div class="col">
+                   <button type="submit" class="addSubmitBtn btn text-start">إضافة للفريق</button>                 
+                </div>
+            </form>
+        </div>
+        <div class="staffCards">
+            <div class="row row-cols-lg-3 row-cols-md-3 row-cols-sm-2 row-cols-1">
+                @for (one of staff(); track $index) {
+                @if (one.role == "doctor") {
+                   <div class="col">
+                     <div class="card h-100 p-3 rounded-4">
+                        <div class="detailsCard d-flex justify-content-between align-items-center flex-wrap">
+                            <div class="detailsMem">
+                             <h2 class="mainfont cardTitle fs-4">{{one.name}}</h2>
+                             <p>{{one.tittle}}</p>
+                            </div>
+                            <div class="role roleD">
+                                <span>{{getStaffTypeLabel(one.role)}}</span>
+                            </div>
+                        </div>
+                      </div>
+                   </div>
+                }@else {
+                   <div class="col">
+                     <div class="card p-3 rounded-4">
+                        <div class="detailsCard d-flex justify-content-between align-items-center flex-wrap">
+                            <div class="detailsMem">
+                             <h2 class="mainfont cardTitle fs-4">{{one.name}}</h2>
+                             <p>{{one.tittle}}</p>
+                            </div>
+                            <div class="role roleA">
+                                <span>{{getStaffTypeLabel(one.role)}}</span>
+                            </div>
+                        </div>
+                        <button type="button" class="btn deletBtn">حذف</button>
+                      </div>
+                   </div>
+                }
+                }
+              
+            </div>
+        </div>
+        @if (showMassege) {
+          <app-masseges [messageData]="massegeStaff()!"></app-masseges>
+        }
+    </div>
+</section>

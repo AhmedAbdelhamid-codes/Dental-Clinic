@@ -1,0 +1,103 @@
+.addStaff{
+    background-color: var(--third-color);
+    min-height: 100vh;
+    padding-block: 100px;
+}
+
+.titleSec{
+    color: var(--primary-color);
+}
+
+.paragraph{
+    color: var(--second-color);
+}
+
+.addBtn{
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 15px;
+    padding: 10px 15px;
+    transition: var(--trans);
+}
+
+.addBtn:hover{
+    background-color: var(--second-color) ;
+    transform: translateY(-3px);
+}
+
+.formBox .formTitle{
+    font-size: 18px;
+}
+
+form label{
+    top: -27px;
+    right: 10px;
+    font-size: 14px;
+    color: var(--primary-color);
+}
+
+form input,form select{
+    padding: 10px;
+    background-color: var(--third-color);
+    border-width:0px;
+    border-radius: 15px;
+    color: var(--primary-color);
+    transition: var(--trans);
+}
+
+form input:focus ~ label,form select:focus ~ label{
+   font-weight: bold;
+}
+
+form input:focus,form select:focus{
+   outline-color: var(--primary-color);
+}
+
+form .feild i{
+    top: 50%;
+    transform: translateY(-50%);
+    left: 15px;
+    cursor: pointer;
+    font-size: 18px;
+    color: var(--primary-color);
+}
+
+.addSubmitBtn{
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 15px;
+    padding: 10px 15px;
+    transition: var(--trans);
+}
+
+.addSubmitBtn:hover{
+    background-color: var(--second-color) ;
+    transform: translateY(-3px);
+}
+
+.cardTitle{
+    color: var(--primary-color);
+}
+
+.role{
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.roleD{
+    background-color: #DBEAFE;
+    color: #3053B4;
+}
+
+.roleA{
+    background-color: #D1FAE5;
+    color: #065F46;
+}
+
+.deletBtn{
+    border-radius: 15px;
+    background-color: #FEE2E2;
+    color: #9F312D;
+}
