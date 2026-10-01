@@ -91,7 +91,38 @@ this.massegeStaff.set(
 
 this.showMassege = true
 
+this.hideOrNo = this.hideOrNo === 'd-block'? "d-none" : "d-block"
+this.showOrNo = this.showOrNo === 'd-none'? "d-block" : "d-none"
+
+this.staff.set(await this.staffService.getStaff())
+
+}
+
+async detletStaff(id:string){
+
+const result = await this.staffService.deletStaff(id)
+
+if(result === false){
+this.massegeStaff.set(
+{
+  success: false,
+  message: "حدث خطأ اثناء حذف عضو برجاء اعادة المحاولة او التواصل مع المطور"
+}) 
+
+this.showMassege = true
 console.log(result)
+
+return
+}
+
+this.massegeStaff.set(
+{
+  success: true,
+  message: "تم حذف العضو بنجاح"
+}) 
+
+this.showMassege = true
+
 
 this.staff.set(await this.staffService.getStaff())
 

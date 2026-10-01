@@ -51,6 +51,22 @@ if(error){
 return data
 }
 
+async deletStaff(id:string){
+const {data, error} = await supabase.functions.invoke(
+   'delete-staff',
+    {
+      body: {userId : id}
+    }
+)
+
+if(error){
+console.log(error);
+return false
+}
+
+return data
+}
+
 
 async getStaff(){
 const {data,error} = await supabase.from('staff').select('*');
