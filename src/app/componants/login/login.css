@@ -1,18 +1,14 @@
-.loginForm{
+
+.boxform{
     height: 100vh;
-    background:linear-gradient(90deg,#3368a0a2,#66a3bf96),url("/photos/photo-1629909613654-28e377c37b09.avif") 
-    center / cover no-repeat;
+    background-color: var(--third-color);
 }
 
+
 form{
-    flex: 1 1 400px;
-    max-width: 450px;
+    width: 100%;
+    max-width: 400px;
     height: auto;
-    padding: 30px;
-    background-color: rgba(255, 255, 255, 0.367);
-    backdrop-filter: blur(5px);
-    border-radius: 25px;
-    border: 1px solid white;
 }
 
 .field label,i{
@@ -65,4 +61,10 @@ form{
    transform: translateY(-2px);
    color: white;
    background-color: var(--second-color);
+}
+
+.imge{
+    height: 100vh;
+    background:url("/photos/login.jpg") 
+    center / cover no-repeat;
 }

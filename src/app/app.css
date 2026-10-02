@@ -1,0 +1,60 @@
+/* ═══════════════════════════════════════
+       to up
+═══════════════════════════════════════ */
+.btn-up_body{
+  bottom: 20px;
+  right: 20px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.349);
+  border: 1px solid var(--text-dark);
+  cursor: pointer;
+  box-shadow: 0px 0px 10px white;
+  transform: translateY(70px);
+}
+
+.btn-up_body i{
+  font-size: 25px;
+  color: white;
+  transition: 0.2s;
+}
+
+.btn-up_body .icon{
+left: 50%;
+bottom: 20%;
+transform: translateX(-50%);
+}
+
+.btn-up_body .icon2{
+  left: 50%;
+  bottom: -50px;
+  transform: translateX(-50%);
+}
+
+.btn-up_body:hover .icon2{
+  bottom: 20%;
+  transform: translate(-50%,0px);
+}
+
+.btn-up_body:hover .icon{
+transform: translate(-50%,-40px);
+}
+
+.btn-up_body.show{
+  animation: up-body 1s ease-in-out both;
+}
+
+@keyframes up-body{
+  0%{
+     transform: translateY(70px);
+  }
+
+  50%{
+    transform: translateY(-10px);
+  }
+
+  100%{
+    transform: translateY(0px);
+  }
+}

@@ -30,3 +30,8 @@ margin-bottom: 20px;
 .card p{
 color: white;
 }
+
+[appAnimat="card"]{
+transform: translateY(150px);
+opacity: 0;
+}

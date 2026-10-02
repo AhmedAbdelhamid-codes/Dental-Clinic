@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, signal} from '@angular/core';
+import { Component, HostListener, inject, OnInit, signal} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { AuthService } from './auth-service';
 import { LodingPage } from './componants/loding-page/loding-page';
@@ -17,6 +17,7 @@ export class App implements OnInit {
 isLoading = signal<boolean>(true)
 showMassege:boolean = false
 massegeSession = signal<ServiceResult | null>(null);
+showUpBtn:boolean = false
 
 private readonly authService = inject(AuthService)
 private readonly staffService = inject(StaffService)
@@ -43,6 +44,22 @@ async ngOnInit() {
     this.isLoading.set(false)
   }
 
+}
+
+@HostListener("window:scroll")
+scroll():void{
+    if(window.scrollY >= 200){
+         this.showUpBtn = true
+    }else{
+      this.showUpBtn = false
+    }
+}
+
+upToTop(){
+   window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    })
 }
 
 

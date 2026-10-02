@@ -2,6 +2,11 @@
 <app-loding-page></app-loding-page>
 }@else {
 <router-outlet></router-outlet>
+<!-- ============to top for body=========== -->
+<button [class.show]="showUpBtn" (click)="upToTop()" class="btn-up_body z-2 position-fixed overflow-hidden" id="btn-up_body">
+ <i class="fa-solid fa-arrow-up position-absolute icon "></i>
+ <i class="fa-solid fa-arrow-up position-absolute icon2"></i>
+</button>
 @if (showMassege) {
     <app-masseges  [messageData]="massegeSession()!"></app-masseges>
 }
