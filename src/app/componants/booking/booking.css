@@ -5,12 +5,14 @@
 }
 
 .title{
-    font-size: clamp(30px, 4vw, 60px);
+    font-family: var(--mainFont);
+    font-size: var(--fontSizeTitleBooking);
     font-weight: bold;
     color: var(--primary-color);
 }
 
 .subtitle{
+    font-family: var(--mainFont);
     color: var(--second-color);
 }
 

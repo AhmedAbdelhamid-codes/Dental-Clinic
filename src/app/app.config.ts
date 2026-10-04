@@ -4,6 +4,8 @@ import { registerLocaleData } from '@angular/common';
 import ar from '@angular/common/locales/ar';
 import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
+import { provideTranslateService } from '@ngx-translate/core';
+import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
 
 registerLocaleData(ar);
 
@@ -15,6 +17,12 @@ export const appConfig: ApplicationConfig = {
     {
       provide: LOCALE_ID,
       useValue: 'ar-EG'
-    }
+    },
+    provideTranslateService({
+     loader: provideTranslateHttpLoader({
+      prefix: '/i18n/',
+      suffix: '.json'
+       })
+    }),
   ]
 };

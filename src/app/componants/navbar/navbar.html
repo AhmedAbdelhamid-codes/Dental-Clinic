@@ -1,26 +1,29 @@
 <header>
     <nav [class.scroll]="scrolled" class="mynav navbar navbar-expand-lg fixed-top">
      <div class="container">
-    <a class="navbar-brand me-0" routerLink="home"><span class="spacial d-block text-start">عيادة</span>د.مصطفى محمد سيد</a>
+    <a class="navbar-brand me-0" routerLink="home"><span class="spacial d-block text-start">{{'navbar.clinic'| translate}}</span>{{'navbar.doctorName' | translate}}</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
       <ul class="navbar-nav m-auto">
         <li class="nav-item">
-          <a class="nav-link" routerLinkActive="navActive" routerLink="/home">الرئيسية</a>
+          <a class="nav-link" routerLinkActive="navActive" routerLink="/home">{{'navbar.home' | translate}}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLinkActive="navActive" routerLink="/about">عن الدكتور</a>
+          <a class="nav-link" routerLinkActive="navActive" routerLink="/about">{{'navbar.about' | translate}}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLinkActive="navActive" routerLink="/services">الخدمات</a>
+          <a class="nav-link" routerLinkActive="navActive" routerLink="/services">{{'navbar.services' | translate}}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLinkActive="navActive" routerLink="/booking">الحجز</a>
+          <a class="nav-link" routerLinkActive="navActive" routerLink="/booking">{{'navbar.booking' | translate}}</a>
         </li>
       </ul>
-      <a class="btn-book link-underline link-underline-opacity-0" routerLink="booking"><i class="fa-solid fa-calendar-days me-1"></i>احجز معادك دلوقتي</a>
+      <div class="btns d-flex justify-content-center align-items-center gap-3 flex-wrap">
+        <button type="button" (click)="changeLang()" class="btn langBtn"><i class="fa-solid fa-language me-1"></i>{{'navbar.language' | translate}}</button>
+        <a class="btn-book link-underline link-underline-opacity-0" routerLink="booking"><i class="fa-solid fa-calendar-days me-1"></i>{{'navbar.bookNow'| translate}}</a>
+      </div>
     </div>
   </div>
 </nav>

@@ -3,10 +3,11 @@ import { ReactiveFormsModule,FormControl,FormGroup, Validators} from '@angular/f
 import { Slots } from '../../slots';
 import { DatePipe } from '@angular/common';
 import { AppointmentInsert } from '../../appointment-insert';
+import { TranslatePipe } from '@ngx-translate/core';
 
 
 @Component({
-  imports: [ReactiveFormsModule,DatePipe],
+  imports: [ReactiveFormsModule,DatePipe,TranslatePipe],
   selector: 'app-booking-form',
   styleUrl: './booking-form.css',
   templateUrl: './booking-form.html',

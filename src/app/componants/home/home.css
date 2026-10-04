@@ -1,5 +1,5 @@
 .hero{
-    background:linear-gradient(90deg,#3368a092 20%,#66a3bfb1 50%),url("/photos/photo-1629909613654-28e377c37b09.avif") 
+    background:linear-gradient(90deg,#3368a070 20%,#66a3bfb1 50%),url("/photos/photo-1629909613654-28e377c37b09.avif") 
     center / cover no-repeat;
 }
 
@@ -17,14 +17,14 @@
 .social::before{
 content: "";
 position: absolute;
-right: 110%;
+inset-inline-start: 110%;
 width: 3px;
 height: 100%;
 background-color: var(--third-color);
 }
 
 .details .title{
-  font-size:  clamp(40px,5vw,100px);
+  font-size:  var(--fontSizeTitle);
   font-weight: bold;
   color: white;
   animation: fadeUp 0.8s 0.2s ease both;
@@ -32,12 +32,14 @@ background-color: var(--third-color);
 
 .details .subtitle{
     color: var(--third-color);
+    font-family: var(--mainFont);
 }
 
 .details .paragraph{
-    font-size: 22px;
+    font-size: 18px;
+    font-family: var(--mainFont);
     font-weight: 900;
-    line-height: 24px;
+    line-height: 20px;
     color: white;;
     animation: fadeUp 0.8s 0.3s ease both;
 }
@@ -76,7 +78,7 @@ background-color: var(--third-color);
 }
 
 .social .titleSocial{
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 600;
     color: white;
     animation: fadeUp 0.8s 0.2s ease both;

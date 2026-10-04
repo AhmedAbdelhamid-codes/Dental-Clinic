@@ -25,6 +25,19 @@ box-shadow: 0px 0px 40px black;
     transform: translateY(-3px);
 }
 
+.mynav .langBtn {
+    background: linear-gradient(1230deg,#3368a0,#21a8c6);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 25px;
+    padding: 10px 15px;
+    transition: var(--trans);
+}
+.mynav .langBtn:hover{
+    transform: translateY(-3px);
+}
+
 .navbar-nav{
     gap: 40px;
 }

@@ -1,7 +1,9 @@
 import { ChangeDetectorRef, Component, inject, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { ServiceResult } from '../../service-result';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
+  imports: [TranslatePipe],
   selector: 'app-masseges',
   templateUrl: './masseges.html',
   styleUrl: './masseges.css'

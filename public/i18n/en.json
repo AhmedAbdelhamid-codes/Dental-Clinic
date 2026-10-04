@@ -1,0 +1,126 @@
+{
+  "home": {
+    "welcome": "Welcome to our clinic"
+    },
+  "navbar": { 
+    "clinic": "Clinic", 
+    "doctorName": "Dr. Mostafa Mohamed Sayed", 
+    "home": "Home", 
+    "about": "About", 
+    "services": "Services", 
+    "booking": "Booking", 
+    "bookNow": "Book Your Appointment Now", 
+    "language": "عربي" 
+   },
+   "hero": { 
+    "followUs": "Follow Us", 
+    "title": "Your Smile", 
+    "subtitle": "Is Our Responsibility", 
+    "description": "Taking care of your teeth with the latest technology ", 
+    "description2": "environment that makes visiting the dentist a pleasant experience",
+    "bookNow": "Book Your Appointment Now", 
+    "aboutDoctor": "About the Doctor" 
+  },
+  "about": {
+    "specialtyTitle": "Specialty",
+    "specialty": "Oral and Dental Surgery",
+    "qualifications": {
+      "bachelor": "Bachelor of Dentistry",
+      "facultyMember": "Faculty Member at the Faculty of Dentistry, Assiut University",
+      "doctorate": "Doctorate in Pediatric Dentistry",
+      "medicalSyndicate": "Member of the Egyptian Medical Syndicate"
+    },
+    "doctorName": "Dr. Mostafa Mohamed Sayed",
+    "subtitle": "Your Specialized Dentist",
+    "paragraph1": "With more than <span class=\"special\">ten years</span> of experience providing exceptional dental care, Dr. Mostafa combines medical precision with a human touch that helps every patient feel comfortable and reassured.",
+    "paragraph2": "He holds a Bachelor's degree in Oral and Dental Surgery from <span class=\"special\">MUST</span> University, with advanced training in zirconia restorations, immediate dental implants, and clear aligners.",
+    "paragraph3": "Dr. Mostafa believes that prevention is better than treatment, which is why he dedicates part of every session to educating patients and explaining how to maintain their dental health in the long term.",
+    "introVideo": "Introduction Video"
+  },
+  "services": {
+    "title": "What Do We Offer?",
+    "description": "A comprehensive range of dental services using the latest technologies and high-quality materials to ensure the best results.",
+    "cleaning": {
+      "title": "Teeth Cleaning",
+      "description": "Professional deep cleaning that removes plaque and stains while protecting your teeth from cavities and gum disease."
+    },
+    "whitening": {
+      "title": "Teeth Whitening",
+      "description": "Advanced whitening techniques that give you a brighter smile and limitless confidence."
+    },
+    "rootCanal": {
+      "title": "Root Canal Treatment",
+      "description": "Precise and safe root canal treatment that preserves the natural tooth and helps avoid extraction."
+    },
+    "zirconia": {
+      "title": "Zirconia Restorations",
+      "description": "Zirconia crowns and bridges with a precise natural color match and exceptional durability."
+    },
+    "orthodontics": {
+      "title": "Orthodontics",
+      "description": "Clear and traditional braces to correct alignment and achieve proper occlusion."
+    },
+    "implants": {
+      "title": "Dental Implants",
+      "description": "High-quality titanium implants that closely replicate natural teeth in both appearance and function."
+    }
+  },
+  "booking": {
+    "title": "Choose Your Appointment",
+    "subtitle": "That Suits You",
+    "description": "Choose a <span class=\"special\">suitable</span> time from the available appointments <br> and complete your booking details in a few simple steps",
+    "available": "Available",
+    "bookNow": "Book Now",
+    "success": "Your booking request has been sent - the clinic team will contact you to confirm the appointment",
+    "error": "An error occurred and the booking could not be confirmed"
+  },
+  "bookingForm": {
+    "confirmation": "Booking Confirmation",
+    "bookNow": "Book Your Appointment",
+
+    "name": "Full Name*",
+    "namePlaceholder": "Enter your full name",
+    "nameRequired": "Name is required*",
+    "nameMinlength": "Name must be at least 3 characters",
+
+    "phone": "Phone Number*",
+    "phonePlaceholder": "01XXXXXX",
+    "phoneRequired": "Phone number is required*",
+    "phoneInvalid": "Please enter a valid phone number",
+
+    "problem": "Reason for Visit or Problem *",
+    "problemPlaceholder": "Briefly describe your problem...",
+    "problemRequired": "Reason for visit is required*",
+    "problemMinlength": "Description must be at least 5 characters",
+
+    "appointmentType": "Appointment Type *",
+    "new": "New Visit",
+    "newDescription": "First visit to the clinic",
+    "followUp": "Follow-up Visit",
+    "followUpDescription": "Follow-up for a previous",
+    "appointmentTypeRequired": "Appointment type is required*",
+
+    "selectedAppointment": "Selected Appointment",
+
+    "invalidForm": "Please check the entered information!",
+    "confirmBooking": "Confirm Booking"
+  },
+  "footer": {
+    "clinic": "Clinic",
+    "description": "Exceptional dental care using the latest technologies and experienced hands. Your smile is our responsibility.",
+    "quickLinks": "Quick Links",
+    "home": "Home",
+    "about": "About the Doctor",
+    "services": "Services",
+    "booking": "Booking",
+    "contactUs": "Contact Us",
+    "workingHours": "Saturday – Thursday: 9 AM – 9 PM",
+    "clinicLocation": "Clinic Location",
+    "city": "Assiut, Egypt",
+    "address": "Al-Awqaf Towers, Entrance No. 4, First Upper Floor, next to Al Mokhtabar Lab",
+    "rights": "© 2026 Dr. Mostafa Mohamed Sayed Clinic — All Rights Reserved | Developed by <a href=\"https://www.facebook.com/ahmed.abdelhameed.1806253?locale=ar_AR\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"font-size: 12px;\">Ahmed Abdelhamid</a>",
+    "developedBy": "Developed by",
+    "siteManagement": "Site Management:",
+    "staffLogin": "Medical Staff Login"
+  }
+}

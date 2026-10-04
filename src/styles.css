@@ -62,8 +62,20 @@ select {
    Global Utility Classes
 ========================= */
 
-.mainfont{
+.mainfontAR{
   font-family: "IBM Plex Sans Arabic", sans-serif;
+}
+
+html[dir="rtl"]{
+  --mainFont: "IBM Plex Sans Arabic", sans-serif;
+  --fontSizeTitle: clamp(40px,5vw,100px);
+  --fontSizeTitleBooking:  clamp(30px, 4vw, 60px);
+}
+
+html[dir="ltr"]{
+  --mainFont: "Ubuntu", sans-serif;
+  --fontSizeTitle: clamp(40px,5vw,60px);
+  --fontSizeTitleBooking : clamp(30px, 4vw, 50px);
 }
 
 .special{
@@ -84,4 +96,14 @@ select {
         transform: translateY(0px);
         opacity: 1;
     }
+}
+
+html[dir="rtl"] {
+  --left-animation: -50%;
+  --right-animation: 50%;
+}
+
+html[dir="ltr"] {
+  --left-animation: 50%;
+  --right-animation: -50%;
 }

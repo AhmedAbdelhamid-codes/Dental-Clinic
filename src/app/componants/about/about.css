@@ -103,12 +103,12 @@
     transition: all 0.6s 0.1s;
 }
 
-[appAnimat="left"]{
-    transform: translateX(-50%);
+[appAnimat="left"] {
+  transform: translateX(var(--left-animation));
 }
 
-[appAnimat="right"]{
-    transform: translateX(50%);
+[appAnimat="right"] {
+  transform: translateX(var(--right-animation));
 }
 
 [appAnimat="left"].show,

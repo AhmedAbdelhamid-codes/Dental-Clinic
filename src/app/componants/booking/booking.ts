@@ -7,9 +7,10 @@ import { AppointmentInsert } from '../../appointment-insert';
 import { AppointmentService } from '../../appointmentService';
 import { ServiceResult } from '../../service-result';
 import { Masseges } from '../masseges/masseges';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
-  imports: [DatePipe, BookingForm,Masseges],
+  imports: [DatePipe, BookingForm,Masseges,TranslatePipe],
   selector: 'app-booking',
   styleUrl: './booking.css',
   templateUrl: './booking.html',
@@ -63,12 +64,12 @@ if (result) {
 
   this.massegeappoinmernt.set({
     success: true,
-    message: "تم إرسال طلب الحجز - سيتواصل معك فريق العيادة لتأكيد الموعد"
+    message: 'booking.success'
   });
 } else {
   this.massegeappoinmernt.set({
     success: false,
-    message: "حدث خطأ ولم يتم تأكيد الحجز"
+    message: 'booking.error'
   });
 }
 

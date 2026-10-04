@@ -26,7 +26,16 @@
             ],
             "styles": [
               "./node_modules/@fortawesome/fontawesome-free/css/all.min.css",
-              "./node_modules/bootstrap/dist/css/bootstrap.rtl.min.css",
+              {
+                "input": "node_modules/bootstrap/dist/css/bootstrap.min.css",
+                "bundleName": "bootstrap-ltr",
+                "inject": false
+              },
+              {
+               "input": "node_modules/bootstrap/dist/css/bootstrap.rtl.min.css",
+               "bundleName": "bootstrap-rtl",
+               "inject": false
+              },
               "src/styles.css"
             ],
             "scripts": [
