@@ -6,7 +6,7 @@
       </div>
       <div class="addSlots p-4 mb-5">
         <h2 class="mb-5 mainfont fs-5">إضافة موعد جديد</h2>
-        <form [formGroup]="addSlot" (ngSubmit)="addSlotsSubmit()" class="d-flex justify-content-center align-items-center gap-3 flex-wrap ">
+        <form [formGroup]="addSlot" (ngSubmit)="addSlotsSubmit()" class="d-flex justify-content-center align-items-center gap-md-3 gap-4 flex-wrap ">
            <div class="feild position-relative">
                 <label for="Date" class="position-absolute">التاريخ*</label>
                 <input class="w-100 p-2 border border-success border-opacity-25" id="Date" type="date" formControlName="date" required="">

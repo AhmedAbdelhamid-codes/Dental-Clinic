@@ -7,7 +7,7 @@ import { AppointmentInsert } from '../../appointment-insert';
 import { AppointmentService } from '../../appointmentService';
 import { ServiceResult } from '../../service-result';
 import { Masseges } from '../masseges/masseges';
-import { TranslatePipe } from '@ngx-translate/core';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 
 @Component({
   imports: [DatePipe, BookingForm,Masseges,TranslatePipe],
@@ -24,14 +24,24 @@ showForm:boolean = false;
 selectedSlot: Slots | null = null
 massegeappoinmernt = signal<ServiceResult | null>(null);
 showMassge:boolean= false
+currentLocale = 'ar-EG';
+slotBooked!:Slots
+showSlots = signal<boolean>(true)
 
 private readonly slotService = inject(SlotService)
 private readonly appointment = inject(AppointmentService)
+private readonly translate = inject(TranslateService)
 
 async ngOnInit(){
+
+  this.translate.onLangChange.subscribe(({ lang }) => {
+    this.currentLocale = lang === 'ar' ? 'ar-EG' : 'en-US';
+  });
+
   this.soltsData.set(await this.slotService.getAvailableSlots("available")) 
 
   this.groupSlots()
+  this.showSlots.set(false)
   console.log(this.soltsData())
 }
 
@@ -55,9 +65,15 @@ this.selectedSlot = slot
 }
 
 async handleBooking(Data:AppointmentInsert){
+
+this.slotBooked = this.soltsData().find((slot)=>{
+     slot.id === Data.slot_id
+})!
+
 const result = await this.appointment.bookAppointment(Data)
 
 if (result) {
+  
   this.soltsData.set(await this.slotService.getAvailableSlots("available")) 
 
   this.groupSlots()
@@ -66,7 +82,7 @@ if (result) {
     success: true,
     message: 'booking.success'
   });
-} else {
+  }else {
   this.massegeappoinmernt.set({
     success: false,
     message: 'booking.error'

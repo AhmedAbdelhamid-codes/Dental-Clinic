@@ -116,3 +116,14 @@
     opacity: 1;
     transform: translateX(0);
 }
+
+@media (max-width:992) {
+[appAnimat="left"],[appAnimat="right"]{
+ transform: translateY(100px);
+ opacity: 0;
+}
+
+[appAnimat="left"],[appAnimat="right"]{
+ transform: translatex(0px);
+}
+}

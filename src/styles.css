@@ -74,7 +74,7 @@ html[dir="rtl"]{
 
 html[dir="ltr"]{
   --mainFont: "Ubuntu", sans-serif;
-  --fontSizeTitle: clamp(40px,5vw,60px);
+  --fontSizeTitle: clamp(25px,5vw,60px);
   --fontSizeTitleBooking : clamp(30px, 4vw, 50px);
 }
 
@@ -86,7 +86,7 @@ html[dir="ltr"]{
 
 /* aniamt */
 
-@keyframes fadeup {
+@keyframes fadeupServses {
     from{
         transform: translateY(150px);
         opacity: 0;
@@ -106,4 +106,22 @@ html[dir="rtl"] {
 html[dir="ltr"] {
   --left-animation: 50%;
   --right-animation: -50%;
+}
+
+
+/* responsev */
+
+/* aniamt */
+@media (max-width : 992px) {
+  @keyframes fadeupAbout {
+    from{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    to{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
 }

@@ -12,6 +12,7 @@ export class Navbar implements OnInit {
 
 scrolled:boolean = false
 
+
 private translate = inject(TranslateService);
 
 @HostListener("window:scroll")
@@ -24,22 +25,32 @@ scroll():void{
 }
 
 ngOnInit(): void {
-  this.translate.use('ar')
+  const savedLang = localStorage.getItem('lang') || 'ar';
+  this.translate.use(savedLang);
+
+  document.documentElement.lang = savedLang;
+  document.documentElement.dir = savedLang === 'ar' ? 'rtl' : 'ltr';
+
+  const bootstrapStyle = document.getElementById('bootstrap-style') as HTMLLinkElement;
+  
+  if (bootstrapStyle) {
+    bootstrapStyle.href = savedLang === 'ar' ? 'bootstrap-rtl.css' : 'bootstrap-ltr.css';
+  }
 }
 
 changeLang(){
+  const newLang = this.translate.currentLang();
+  const nextLang = newLang === 'en' ? 'ar' : 'en';
 
-const newLang = this.translate.currentLang()
+  this.translate.use(nextLang);
+  
+  localStorage.setItem('lang', nextLang);
 
-this.translate.use(newLang === 'en'? 'ar' : 'en')
-
-  document.documentElement.lang = newLang === 'ar' ? 'en' : 'ar';
-  document.documentElement.dir = newLang === 'ar' ? 'ltr' : 'rtl';
+  document.documentElement.lang = nextLang;
+  document.documentElement.dir = nextLang === 'ar' ? 'rtl' : 'ltr';
 
   const bootstrapStyle = document.getElementById('bootstrap-style') as HTMLLinkElement;
-
-  bootstrapStyle.href =
-    newLang === 'ar'? 'bootstrap-ltr.css' : 'bootstrap-rtl.css';
+  bootstrapStyle.href = nextLang === 'ar' ? 'bootstrap-rtl.css' : 'bootstrap-ltr.css';
 }
 
 

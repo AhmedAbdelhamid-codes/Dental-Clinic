@@ -4,6 +4,13 @@
     background-color: var(--third-color);
 }
 
+.titleForm{
+    font-family: var(--mainFont);
+}
+
+.paragraph{
+ font-family: var(--mainFont);
+}
 
 form{
     width: 100%;
@@ -67,4 +74,8 @@ form{
     height: 100vh;
     background:url("/photos/login.jpg") 
     center / cover no-repeat;
+}
+
+.spinner-grow{
+    background-color: var(--primary-color);
 }

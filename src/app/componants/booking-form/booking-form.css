@@ -9,7 +9,8 @@
 
 .formAppointment{
     height: 80vh;
-    width: 35vw;
+    width: 100%;
+    max-width: 550px;
     border-radius: 30px;
 }
 

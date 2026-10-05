@@ -11,6 +11,14 @@
     color: var(--primary-color);
 }
 
+.note{
+    font-size: 60px;
+    font-family: var(--mainFont);
+    color: var(--primary-color);
+    font-weight: bold;
+    height: 40vh;
+}
+
 .subtitle{
     font-family: var(--mainFont);
     color: var(--second-color);
@@ -52,5 +60,22 @@
 .date .bookBtn:active{
     transform: translateY(3px);
     box-shadow: 0px 0px 5px black;
+}
+
+.bookBtnDisabled{
+    font-size: 16px;
+    border-radius: 20px;
+    box-shadow: 0px 3px 5px black;
+    transition: var(--trans);
+    border: 0px solid black;
+    cursor: not-allowed;
+}
+.date .bookBtnDisabled:active{
+    transform: translateY(3px);
+    box-shadow: 0px 0px 5px black;
+}
+
+.spinner-grow{
+    background-color: var(--primary-color);
 }
 

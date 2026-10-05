@@ -72,7 +72,8 @@
     "available": "Available",
     "bookNow": "Book Now",
     "success": "Your booking request has been sent - the clinic team will contact you to confirm the appointment",
-    "error": "An error occurred and the booking could not be confirmed"
+    "error": "An error occurred and the booking could not be confirmed",
+    "notFound": "There are currently no available appointments"
   },
   "bookingForm": {
     "confirmation": "Booking Confirmation",
@@ -103,7 +104,7 @@
     "selectedAppointment": "Selected Appointment",
 
     "invalidForm": "Please check the entered information!",
-    "confirmBooking": "Confirm Booking"
+    "confirmBooking": "Confirm Booking"  
   },
   "footer": {
     "clinic": "Clinic",

@@ -1,33 +1,57 @@
 <section class="booking">
   <div class="container">
     <div class="details mt-3 mb-5">
-        <h2 class="mainfont title">{{'booking.title' | translate}}<span class="subtitle ms-sm-5 ms-0 d-block text-start">{{'booking.subtitle' |translate}}</span></h2>
+        <h2 class="title">{{'booking.title' | translate}}<span class="subtitle ms-sm-5 ms-0 d-block text-start">{{'booking.subtitle' |translate}}</span></h2>
         <p class="paragraph" [innerHTML]="'booking.description' |translate"></p>
     </div>
     <div class="bookDate">
-    @for (group of groupedSlots().entries(); track $index) {
-        <h3 class="titleDate mb-4 position-relative">{{group[0] | date:"EEEE, d MMMM y"}}</h3>
+    @if (showSlots()) {
+         <div class="d-flex justify-content-center align-items-center gap-2">
+        <div class="spinner-grow" role="status">
+          <span class="visually-hidden"></span>
+        </div>
+        <div class="spinner-grow" role="status">
+          <span class="visually-hidden"></span>
+        </div>
+        <div class="spinner-grow" role="status">
+          <span class="visually-hidden"></span>
+        </div>
+      </div>
+    }@else {
+      @if(soltsData().length > 0){
+         @for (group of groupedSlots().entries(); track $index) {
+        <h3 class="titleDate mb-4 position-relative">{{group[0] | date:"EEEE, d MMMM y" : undefined : currentLocale}}</h3>
         <div class="row mb-5 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1 g-3">
             @for (slot of group[1]; track $index) {
               <div class="col">
                 <div class="date bg-white rounded-4 p-3 d-flex justify-content-between align-items-center">
                   <div class="rghit">
                     <span class="subtitleTime mb-2 d-block">{{'booking.available' | translate}}</span>
-                    <h4 class="titleTime">{{slot.date + 'T' + slot.time | date:"h:mma"}}</h4>
+                    <h4 class="titleTime">{{slot.date + 'T' + slot.time | date:"h:mma" : undefined : currentLocale}}</h4>
                   </div>
                   <div class="left">
+                  @if(slotBooked?.id === slot.id){
+                  <button class="bookBtnDisabled btn d-flex justify-content-center align-items-center gap-1 btn-primary" type="button" disabled>
+                    <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+                    <span role="status">يتم تجهيز الحجز</span>
+                  </button>
+                  }@else {
                     <button (click)="openFormAppointment(slot)" class="bookBtn btn text-white" type="button">{{'booking.bookNow' | translate}}</button>
+                  }
                   </div>
                 </div> 
               </div>
             }
         </div>
     }
+    }@else {
+       <h2 class="note d-flex justify-content-center align-items-center">{{'booking.notFound' | translate}}</h2>
+    }
+  }
     </div>
     @if (showForm) {
         <app-booking-form [selectedSlot]="selectedSlot" (closeform)="showForm = false" (submitForm)="handleBooking($event)"></app-booking-form>
     }
-
     @if (massegeappoinmernt()) {
      <app-masseges [messageData]="massegeappoinmernt()!"></app-masseges>
     }

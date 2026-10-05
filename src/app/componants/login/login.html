@@ -1,8 +1,21 @@
 <section class="loginForm">
         <div class="w-100 m-0 row justify-content-between align-items-center position-relative">
           <div class="boxform col-md-6 col-sm-12 p-5 d-flex justify-content-center align-items-center flex-column">
-            <h1 class=" titleForm mainfont">اهلا بعودتك</h1>
-            <p>سجل دخولك</p>
+           @if(showRelode()){
+            <div class="d-flex justify-content-center align-items-center gap-2">
+            <div class="spinner-grow" role="status">
+             <span class="visually-hidden"></span>
+            </div>
+            <div class="spinner-grow" role="status">
+             <span class="visually-hidden"></span>
+            </div>
+            <div class="spinner-grow" role="status">
+              <span class="visually-hidden"></span>
+            </div>
+            </div>
+           }@else {
+            <h1 class=" titleForm">اهلا بعودتك</h1>
+            <p class="paragraph">سجل دخولك</p>
           <form class="text-center" [formGroup]="loginForm" (ngSubmit)="submitForm()" >
            <div class="field mb-5 w-100 position-relative">
             <i class="fa-solid fa-envelope position-absolute"></i>
@@ -26,12 +39,13 @@
             <a routerLink="/">صفحة الزائر</a>
            </div>
          </form>
+           }
           </div>
-          <div class="imge col-6 d-md-block d-sm-none"></div>
-        </div>
+          <div class="imge col-6 d-md-block d-none"></div>
         @if (showMassege) {
-            <app-masseges  [messageData]="massegeresult!"></app-masseges>
+          <app-masseges [messageData]="massegeresult!"></app-masseges>
         }
+        </div>
 </section>
 
 

@@ -1,9 +1,9 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, inject, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { ReactiveFormsModule,FormControl,FormGroup, Validators} from '@angular/forms';
 import { Slots } from '../../slots';
 import { DatePipe } from '@angular/common';
 import { AppointmentInsert } from '../../appointment-insert';
-import { TranslatePipe } from '@ngx-translate/core';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 
 
 @Component({
@@ -12,12 +12,24 @@ import { TranslatePipe } from '@ngx-translate/core';
   styleUrl: './booking-form.css',
   templateUrl: './booking-form.html',
 })
-export class BookingForm {
+export class BookingForm implements OnInit {
+
+  
 submitted:boolean = false;
+currentLocale = 'ar-EG';
 
 @Input() selectedSlot!:Slots | null
 @Output() closeform = new EventEmitter<void>()
 @Output() submitForm = new EventEmitter<AppointmentInsert>()
+
+private readonly translate = inject(TranslateService)
+
+ngOnInit(): void {
+   this.translate.onLangChange.subscribe(({ lang }) => {
+    this.currentLocale = lang === 'ar' ? 'ar-EG' : 'en-US';
+  });
+}
+
 
 close(){
 this.closeform.emit()

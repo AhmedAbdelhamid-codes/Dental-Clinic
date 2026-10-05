@@ -9,7 +9,7 @@
             <form class="p-4 overflow-y-scroll" [formGroup]="bookingForm" (ngSubmit)="submitBooking()">
                 <div class="feild mb-3">
                     <label for="Name">{{'bookingForm.name'|translate}}</label>
-                    <input placeholder="'bookingForm.namePlaceholder'|translate" id="Name" type="text" formControlName="name">
+                    <input placeholder="{{'bookingForm.namePlaceholder'|translate}}" id="Name" type="text" formControlName="name">
                     @if (submitted && bookingForm.controls.name.errors?.['required']) {
                         <small class="note text-danger fs-6">{{'bookingForm.nameRequired'|translate}}</small>
                     }
@@ -62,7 +62,7 @@
                 </div>
                 <div class="feild mb-5">
                     <label for="date">{{'bookingForm.selectedAppointment'|translate}}</label>
-                    <input class="date fw-bold " value="{{selectedSlot?.date + 'T' + selectedSlot?.time | date:'EEEE,d MMMM y — h:mm a'}}" disabled id="date" type="text">
+                    <input class="date fw-bold " value="{{selectedSlot?.date + 'T' + selectedSlot?.time | date:'EEEE,d MMMM y — h:mm a' : undefined : currentLocale}}" disabled id="date" type="text">
                 </div>
                 @if (submitted && bookingForm.invalid) {
                     <small class="note fw-bold text-danger fs-6 mb-5">{{'bookingForm.invalidForm'|translate}}</small>

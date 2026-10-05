@@ -28,8 +28,13 @@ ngOnInit(): void {
         const element = entry.target as HTMLElement;
 
         if (this.appAnimat === 'left' || this.appAnimat === 'right') {
+           if(window.innerWidth >= 993){
+              element.classList.add('show');
+           }else{
+            element.style.animation
+            = `fadeupAbout 0.6s ease both`
 
-          element.classList.add('show');
+           }
 
           this.observer?.unobserve(element);
         }
@@ -52,7 +57,7 @@ ngOnInit(): void {
               console.log('card detected', this.index);
 
               element.style.animation
-                = `fadeup 0.8s ${indexInRow * 0.1}s ease both`
+                = `fadeupServses 0.8s ${indexInRow * 0.1}s ease both`
 
              this.observer?.unobserve(element);
         }
