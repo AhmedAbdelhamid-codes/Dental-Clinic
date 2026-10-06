@@ -89,7 +89,9 @@ color: var(--primary-color);
     font-weight:bold ;
     white-space: normal;
     overflow-wrap: anywhere;
+    font-family: var(--mainFont);
 }
+
 
 .navbar-brand .spacial{
     color: var(--second-color) ;

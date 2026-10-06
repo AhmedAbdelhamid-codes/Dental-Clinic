@@ -1,7 +1,4 @@
 {
-  "home": {
-    "welcome": "Welcome to our clinic"
-    },
   "navbar": { 
     "clinic": "Clinic", 
     "doctorName": "Dr. Mostafa Mohamed Sayed", 
@@ -19,7 +16,8 @@
     "description": "Taking care of your teeth with the latest technology ", 
     "description2": "environment that makes visiting the dentist a pleasant experience",
     "bookNow": "Book Your Appointment Now", 
-    "aboutDoctor": "About the Doctor" 
+    "aboutDoctor": "About the Doctor",
+    "titleTab": "Dr. Mostafa Mohamed Sayed's Clinic"
   },
   "about": {
     "specialtyTitle": "Specialty",
@@ -35,7 +33,8 @@
     "paragraph1": "With more than <span class=\"special\">ten years</span> of experience providing exceptional dental care, Dr. Mostafa combines medical precision with a human touch that helps every patient feel comfortable and reassured.",
     "paragraph2": "He holds a Bachelor's degree in Oral and Dental Surgery from <span class=\"special\">MUST</span> University, with advanced training in zirconia restorations, immediate dental implants, and clear aligners.",
     "paragraph3": "Dr. Mostafa believes that prevention is better than treatment, which is why he dedicates part of every session to educating patients and explaining how to maintain their dental health in the long term.",
-    "introVideo": "Introduction Video"
+    "introVideo": "Introduction Video",
+    "titleTab": "About Dr. Mustafa Mohamed Sayed"
   },
   "services": {
     "title": "What Do We Offer?",
@@ -63,7 +62,8 @@
     "implants": {
       "title": "Dental Implants",
       "description": "High-quality titanium implants that closely replicate natural teeth in both appearance and function."
-    }
+    },
+    "titleTab": "Services at Dr. Mostafa Mohamed Sayed's Clinic"
   },
   "booking": {
     "title": "Choose Your Appointment",
@@ -73,7 +73,8 @@
     "bookNow": "Book Now",
     "success": "Your booking request has been sent - the clinic team will contact you to confirm the appointment",
     "error": "An error occurred and the booking could not be confirmed",
-    "notFound": "There are currently no available appointments"
+    "notFound": "There are currently no available appointments",
+    "titleTab": "Booking Appointments"
   },
   "bookingForm": {
     "confirmation": "Booking Confirmation",

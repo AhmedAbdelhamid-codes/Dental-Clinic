@@ -2,7 +2,11 @@
     min-height: 100vh;
     padding-top: 90px;
     padding-bottom: 50px;
-    background-color: var(--primary-color);
+    background-color:#0D1C42;
+}
+
+.title{
+   font-family: var(--mainFont);
 }
 
 .card{

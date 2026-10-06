@@ -15,28 +15,28 @@ export const routes: Routes = [
             },
             {
               path:"home",
-              title:"عيادة الدكتور مصطفي محمد سيد",
+              title:'hero.titleTab',
               loadComponent: () =>
                 import("./componants/landing-pager/landing-pager")
                   .then((c) => c.LandingPager)
             },
             {
               path:"about",
-              title:"عن الدكتور مصطفي محمد سيد",
+              title:'about.titleTab',
               loadComponent: () =>
                 import("./componants/about/about")
                   .then((c) => c.About)
            },
            {
               path:"services",
-              title:"خدامات عيادة الدكتور مصطفي محمد سيد",
+              title:'services.titleTab',
               loadComponent: () =>
                 import("./componants/services/services")
                   .then((c) => c.Services)
             },
             {
               path:"booking",
-              title:"حجز المواعيد",
+              title:'booking.titleTab',
               loadComponent: () =>
                 import("./componants/booking/booking")
                   .then((c) => c.Booking)
